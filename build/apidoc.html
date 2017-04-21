@@ -1,0 +1,5054 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://github.com/chriso/node.io"
+
+    >node.io (v0.5.1)</a>
+</h1>
+<h4>A distributed data scraping and processing framework</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io">module node.io</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Job">
+            function <span class="apidocSignatureSpan">node.io.</span>Job
+            <span class="apidocSignatureSpan">(options, methods)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobClass">
+            function <span class="apidocSignatureSpan">node.io.</span>JobClass
+            <span class="apidocSignatureSpan">(options , methods)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto">
+            function <span class="apidocSignatureSpan">node.io.</span>JobProto
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor">
+            function <span class="apidocSignatureSpan">node.io.</span>Processor
+            <span class="apidocSignatureSpan">(options, start_as_slave)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.cli">
+            function <span class="apidocSignatureSpan">node.io.</span>cli
+            <span class="apidocSignatureSpan">(args, exit)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.create">
+            function <span class="apidocSignatureSpan">node.io.</span>create
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.io.JobClass">
+            function <span class="apidocSignatureSpan">node.io.</span>io.JobClass
+            <span class="apidocSignatureSpan">(options , methods)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.io.JobProto">
+            function <span class="apidocSignatureSpan">node.io.</span>io.JobProto
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.io.Processor">
+            function <span class="apidocSignatureSpan">node.io.</span>io.Processor
+            <span class="apidocSignatureSpan">(options, start_as_slave)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.scrape">
+            function <span class="apidocSignatureSpan">node.io.</span>scrape
+            <span class="apidocSignatureSpan">(input, run, output)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.start">
+            function <span class="apidocSignatureSpan">node.io.</span>start
+            <span class="apidocSignatureSpan">(job, options, callback, capture_output)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.startSlave">
+            function <span class="apidocSignatureSpan">node.io.</span>startSlave
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.web">
+            function <span class="apidocSignatureSpan">node.io.</span>web
+            <span class="apidocSignatureSpan">(args, exit)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.</span>io.JobClass.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.</span>io.JobProto.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.</span>io.Processor.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.</span>io.digest</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.</span>io.eval</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.</span>io.pagerank</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.</span>io.query</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.</span>io.resolve</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.</span>io.statuscode</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.</span>io.utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.</span>io.utils.status</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.JobClass">module node.io.JobClass</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobClass.JobClass">
+            function <span class="apidocSignatureSpan">node.io.</span>JobClass
+            <span class="apidocSignatureSpan">(options , methods)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.JobClass.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.JobClass.prototype">module node.io.JobClass.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobClass.prototype.constructor">
+            function <span class="apidocSignatureSpan">node.io.JobClass.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(options , methods)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.JobProto">module node.io.JobProto</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.JobProto">
+            function <span class="apidocSignatureSpan">node.io.</span>JobProto
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.JobProto.prototype">module node.io.JobProto.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.add">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>add
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.addCookie">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>addCookie
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.append">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>append
+            <span class="apidocSignatureSpan">(file, data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.bindToDomCollection">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>bindToDomCollection
+            <span class="apidocSignatureSpan">(collection)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.bindToDomElement">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>bindToDomElement
+            <span class="apidocSignatureSpan">(elem)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.cancel_timeout">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>cancel_timeout
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.debug">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>debug
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.doRequest">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>doRequest
+            <span class="apidocSignatureSpan">(method, resource, body, headers, callback, parse)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.emit">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>emit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.encodeBody">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>encodeBody
+            <span class="apidocSignatureSpan">(body, use_json)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.exec">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>exec
+            <span class="apidocSignatureSpan">(cmd, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.exit">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>exit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.fail_with">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>fail_with
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.filter">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>filter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.finish">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>finish
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.get">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>get
+            <span class="apidocSignatureSpan">(resource, headers, callback, parse)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.getBytesRead">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>getBytesRead
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.getBytesReceived">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>getBytesReceived
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.getBytesWritten">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>getBytesWritten
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.getHtml">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>getHtml
+            <span class="apidocSignatureSpan">(resource, headers, callback, parse)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.getLinks">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>getLinks
+            <span class="apidocSignatureSpan">($, selector, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.handleInputStream">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>handleInputStream
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.handleSpecialIO">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>handleSpecialIO
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.head">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>head
+            <span class="apidocSignatureSpan">(resource, headers, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.info">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>info
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.initInputStream">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>initInputStream
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.input">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>input
+            <span class="apidocSignatureSpan">(start, num, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.inputFromDirectory">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>inputFromDirectory
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.inputFromFile">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>inputFromFile
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.inputStream">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>inputStream
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.output">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>output
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.outputStream">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>outputStream
+            <span class="apidocSignatureSpan">(stream, name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.parseHtml">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>parseHtml
+            <span class="apidocSignatureSpan">(data, callback, response)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.parseValues">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>parseValues
+            <span class="apidocSignatureSpan">(line, delim, quote, quote_escape)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.post">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>post
+            <span class="apidocSignatureSpan">(resource, body, headers, callback, parse)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.postHtml">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>postHtml
+            <span class="apidocSignatureSpan">(resource, body, headers, callback, parse)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.prepareHtmlparser">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>prepareHtmlparser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.read">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>read
+            <span class="apidocSignatureSpan">(file, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.recurseUrls">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>recurseUrls
+            <span class="apidocSignatureSpan">($)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.reset">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.run">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>run
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.sanitize">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>sanitize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.setCookie">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>setCookie
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.setHeader">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>setHeader
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.setUserAgent">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>setUserAgent
+            <span class="apidocSignatureSpan">(agent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.skip">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>skip
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.spawn">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>spawn
+            <span class="apidocSignatureSpan">(args, stdin, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.takeInputStreamLines">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>takeInputStreamLines
+            <span class="apidocSignatureSpan">(start, num, callback, read_id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.waitForOutputStreamDrains">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>waitForOutputStreamDrains
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.write">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>write
+            <span class="apidocSignatureSpan">(file, data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.JobProto.prototype.writeValues">
+            function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>writeValues
+            <span class="apidocSignatureSpan">(values, delim, quote, quote_escape)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.Processor">module node.io.Processor</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.Processor">
+            function <span class="apidocSignatureSpan">node.io.</span>Processor
+            <span class="apidocSignatureSpan">(options, start_as_slave)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.Processor.prototype">module node.io.Processor.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.prototype.endJob">
+            function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>endJob
+            <span class="apidocSignatureSpan">(job)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.prototype.handleMasterMessage">
+            function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>handleMasterMessage
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.prototype.handleWorkerMessage">
+            function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>handleWorkerMessage
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.prototype.init">
+            function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>init
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.prototype.loadJob">
+            function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>loadJob
+            <span class="apidocSignatureSpan">(job, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.prototype.processJob">
+            function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>processJob
+            <span class="apidocSignatureSpan">(job_name, job_obj, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.prototype.setupMasterEvents">
+            function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>setupMasterEvents
+            <span class="apidocSignatureSpan">(job, workers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.prototype.setupWorkerEvents">
+            function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>setupWorkerEvents
+            <span class="apidocSignatureSpan">(job, master)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.prototype.slaveInit">
+            function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>slaveInit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.prototype.slaveLoadJob">
+            function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>slaveLoadJob
+            <span class="apidocSignatureSpan">(job, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.prototype.startJob">
+            function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>startJob
+            <span class="apidocSignatureSpan">(job_name, job_obj, oncomplete)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.Processor.prototype.status">
+            function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>status
+            <span class="apidocSignatureSpan">(msg, type)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.digest">module node.io.digest</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.digest.class">
+            function <span class="apidocSignatureSpan">node.io.digest.</span>class
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.digest.</span>job</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.eval">module node.io.eval</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.eval.class">
+            function <span class="apidocSignatureSpan">node.io.eval.</span>class
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.eval.</span>job</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.pagerank">module node.io.pagerank</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.pagerank.class">
+            function <span class="apidocSignatureSpan">node.io.pagerank.</span>class
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.pagerank.</span>job</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.query">module node.io.query</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.query.class">
+            function <span class="apidocSignatureSpan">node.io.query.</span>class
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.query.</span>job</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.resolve">module node.io.resolve</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.resolve.class">
+            function <span class="apidocSignatureSpan">node.io.resolve.</span>class
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.resolve.</span>job</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.statuscode">module node.io.statuscode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.statuscode.class">
+            function <span class="apidocSignatureSpan">node.io.statuscode.</span>class
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.statuscode.</span>job</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.utils">module node.io.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.compile">
+            function <span class="apidocSignatureSpan">node.io.utils.</span>compile
+            <span class="apidocSignatureSpan">(compiler, coffee_file, compiled_file, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.crc32">
+            function <span class="apidocSignatureSpan">node.io.utils.</span>crc32
+            <span class="apidocSignatureSpan">(str, hex)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.daemonize">
+            function <span class="apidocSignatureSpan">node.io.utils.</span>daemonize
+            <span class="apidocSignatureSpan">(arg, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.dataToString">
+            function <span class="apidocSignatureSpan">node.io.utils.</span>dataToString
+            <span class="apidocSignatureSpan">(data, newline, stringify_array)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.getFiles">
+            function <span class="apidocSignatureSpan">node.io.utils.</span>getFiles
+            <span class="apidocSignatureSpan">(root_path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.put">
+            function <span class="apidocSignatureSpan">node.io.utils.</span>put
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.put_default">
+            function <span class="apidocSignatureSpan">node.io.utils.</span>put_default
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.removeOnExit">
+            function <span class="apidocSignatureSpan">node.io.utils.</span>removeOnExit
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.tick">
+            function <span class="apidocSignatureSpan">node.io.utils.</span>tick
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node.io.utils.</span>status</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node.io.utils.status">module node.io.utils.status</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.status.bold">
+            function <span class="apidocSignatureSpan">node.io.utils.status.</span>bold
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.status.debug">
+            function <span class="apidocSignatureSpan">node.io.utils.status.</span>debug
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.status.error">
+            function <span class="apidocSignatureSpan">node.io.utils.status.</span>error
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.status.fatal">
+            function <span class="apidocSignatureSpan">node.io.utils.status.</span>fatal
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.status.info">
+            function <span class="apidocSignatureSpan">node.io.utils.status.</span>info
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node.io.utils.status.ok">
+            function <span class="apidocSignatureSpan">node.io.utils.status.</span>ok
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io" id="apidoc.module.node.io">module node.io</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Job" id="apidoc.element.node.io.Job">
+        function <span class="apidocSignatureSpan">node.io.</span>Job
+        <span class="apidocSignatureSpan">(options, methods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Job = function (options, methods) {
+    if (typeof methods === &#x27;undefined&#x27;) {
+        methods = utils.put({}, options);
+        options = {};
+    }
+    var JobClass = exports.JobClass;
+    utils.put(JobClass.prototype, methods);
+
+    //Allow JobClass to be extended
+    JobClass.prototype.extend = function (options, methods) {
+        if (typeof methods === &#x27;undefined&#x27;) {
+            methods = utils.put({}, options);
+            options = {};
+        }
+        function Child () {
+            Child.__super__.constructor.apply(this, arguments);
+        };
+        __extends(Child, JobClass);
+        utils.put(Child.prototype, methods);
+        utils.put_default(options, this.options);
+        var child_instance = new Child(options);
+        child_instance.__super__ = child_instance.constructor.__super__; //?
+        return child_instance;
+    };
+
+    return new JobClass(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+, 7: [ &#x27;6&#x27;, &#x27;7&#x27;, &#x27;8&#x27;, &#x27;9&#x27; ]
+, 8: [ &#x27;6&#x27;, &#x27;7&#x27;, &#x27;8&#x27;, &#x27;9&#x27; ]
+, 9: [ &#x27;6&#x27;, &#x27;7&#x27;, &#x27;8&#x27;, &#x27;9&#x27; ]
+};
+
+var seen_pages = { 1: true };
+
+exports.Job = new nodeio.<span class="apidocCodeKeywordSpan">Job</span>({}, {
+  input: [&#x27;1&#x27;]
+, run: function (page) {
+      var self = this;
+      page_numbers_on_page[page].forEach(function (page) {
+          if (!(page in seen_pages)) {
+              self.add(page);
+              seen_pages[page] = true;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobClass" id="apidoc.element.node.io.JobClass">
+        function <span class="apidocSignatureSpan">node.io.</span>JobClass
+        <span class="apidocSignatureSpan">(options , methods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JobClass = function (options , methods) {
+    //Job.apply(this, [options]);
+    JobClass.__super__.constructor.apply(this, arguments);
+
+    //Handle special input / output cases (see io.js)
+    this.handleSpecialIO();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto" id="apidoc.element.node.io.JobProto">
+        function <span class="apidocSignatureSpan">node.io.</span>JobProto
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JobProto = function (options) {
+    this.reset();
+
+    //Set job options
+    this.options = utils.put_default(options, default_options);
+
+    //Bind node-validator
+    var val = new validator.Validator();
+    this.assert = val.check.bind(val);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor" id="apidoc.element.node.io.Processor">
+        function <span class="apidocSignatureSpan">node.io.</span>Processor
+        <span class="apidocSignatureSpan">(options, start_as_slave)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Processor = function (options, start_as_slave) {
+    isSlave = start_as_slave &#x26;&#x26; !process.env._CHILD_ID_;
+    isMaster = !start_as_slave &#x26;&#x26; !process.env._CHILD_ID_;
+
+    this.options = options || {};
+    this.jobs = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.cli" id="apidoc.element.node.io.cli">
+        function <span class="apidocSignatureSpan">node.io.</span>cli
+        <span class="apidocSignatureSpan">(args, exit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cli = function (args, exit) {
+    exit = exit || function (msg, is_error) {
+        utils.status[is_error ? &#x27;error&#x27; : &#x27;info&#x27;](msg);
+        process.exit(1);
+    };
+
+    var job_path, job_modified = false,
+        input, output, filter,
+        daemonize, daemon_arg,
+        options = {extend:{}};
+
+    if (!args.length) {
+        exit(usage);
+    }
+
+    while (args.length) {
+        arg = args.shift();
+        switch (arg) {
+        case &#x27;-i&#x27;:
+        case &#x27;--input&#x27;:
+            input = args.shift();
+            job_modified = true;
+            break;
+        case &#x27;-o&#x27;:
+        case &#x27;--output&#x27;:
+            output = args.shift();
+            job_modified = true;
+            break;
+        case &#x27;-s&#x27;:
+        case &#x27;--silent&#x27;:
+            options.silent = true;
+            break;
+        case &#x27;-b&#x27;:
+        case &#x27;--benchmark&#x27;:
+            options.benchmark = true;
+            break;
+        case &#x27;-g&#x27;:
+        case &#x27;--debug&#x27;:
+            options.debug = true;
+            break;
+        case &#x27;--spoof&#x27;:
+            options.spoof = true;
+            break;
+        case &#x27;-m&#x27;:
+        case &#x27;--max&#x27;:
+            options.max = args.shift();
+            break;
+        case &#x27;-t&#x27;:
+        case &#x27;--timeout&#x27;:
+            options.global_timeout = args.shift();
+            break;
+        case &#x27;-f&#x27;:
+        case &#x27;--fork&#x27;:
+            if (args.length &#x26;&#x26; args[0].match(/^[0-9]+$/)) {
+                options.fork = args.shift();
+            } else {
+                options.fork = true;
+            }
+            break;
+        case &#x27;-h&#x27;:
+        case &#x27;--help&#x27;:
+            exit(usage);
+            break;
+        case &#x27;-v&#x27;:
+        case &#x27;--version&#x27;:
+            var packagejson = JSON.parse(fs.readFileSync(__dirname + &#x27;/../../../package.json&#x27;, &#x27;utf8&#x27;));
+            exit(&#x27;v&#x27; + packagejson.version);
+            break;
+        case &#x27;-d&#x27;:
+        case &#x27;--daemon&#x27;:
+            if (args.length &#x26;&#x26; args[0][0] !== &#x27;-&#x27;) {
+                daemon_arg = args.shift();
+            }
+            daemonize = true;
+            break;
+        case &#x27;-u&#x27;:
+        case &#x27;--unpack&#x27;:
+            options.unpack = args.shift();
+            break;
+        case &#x27;-c&#x27;:
+        case &#x27;--compiler&#x27;:
+            options.compiler = args.shift();
+            break;
+        default:
+            job_path = arg;
+            if (args.length) {
+                options.args = args;
+                options.arg1 = args[0];
+                args = [];
+            }
+            break;
+        }
+    }
+
+    if (job_modified) {
+        options.extend = {
+            methods: {}
+        };
+        if (output) options.extend.methods.output = output;
+        if (input) options.extend.methods.input = input;
+        if (filter) options.extend.methods.filter = filter;
+    }
+
+    if (daemonize) {
+        utils.daemonize(daemon_arg, function () {
+            processor.start(job_path, options);
+        });
+    } else {
+        processor.start(job_path, options);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.create" id="apidoc.element.node.io.create">
+        function <span class="apidocSignatureSpan">node.io.</span>create
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (obj) {
+    if (typeof obj === &#x27;function&#x27;) {
+        obj = {run: obj};
+    }
+    var options = obj.options || {};
+    options = utils.put({
+        timeout: 10,
+        auto_retry: true,
+        spoof: true
+    }, options);
+    return new job.Job(options, obj);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.io.JobClass" id="apidoc.element.node.io.io.JobClass">
+        function <span class="apidocSignatureSpan">node.io.</span>io.JobClass
+        <span class="apidocSignatureSpan">(options , methods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">io.JobClass = function (options , methods) {
+    //Job.apply(this, [options]);
+    JobClass.__super__.constructor.apply(this, arguments);
+
+    //Handle special input / output cases (see io.js)
+    this.handleSpecialIO();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.io.JobProto" id="apidoc.element.node.io.io.JobProto">
+        function <span class="apidocSignatureSpan">node.io.</span>io.JobProto
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">io.JobProto = function (options) {
+    this.reset();
+
+    //Set job options
+    this.options = utils.put_default(options, default_options);
+
+    //Bind node-validator
+    var val = new validator.Validator();
+    this.assert = val.check.bind(val);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.io.Processor" id="apidoc.element.node.io.io.Processor">
+        function <span class="apidocSignatureSpan">node.io.</span>io.Processor
+        <span class="apidocSignatureSpan">(options, start_as_slave)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">io.Processor = function (options, start_as_slave) {
+    isSlave = start_as_slave &#x26;&#x26; !process.env._CHILD_ID_;
+    isMaster = !start_as_slave &#x26;&#x26; !process.env._CHILD_ID_;
+
+    this.options = options || {};
+    this.jobs = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.scrape" id="apidoc.element.node.io.scrape">
+        function <span class="apidocSignatureSpan">node.io.</span>scrape
+        <span class="apidocSignatureSpan">(input, run, output)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">scrape = function (input, run, output) {
+    if (typeof input === &#x27;function&#x27;) {
+        output = run;
+        run = input;
+        input = false;
+    }
+    var methods = {input:input, run:run},
+        options = {timeout:10, auto_retry:true};
+    if (typeof output !== &#x27;undefined&#x27;) {
+        methods.output = output;
+    }
+    processor.start(new exports.Job(options, methods));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Follow [@nodeio](http://twitter.com/nodeio) or visit [http://node.io/](http://node.io/) for updates.
+
+## Scrape example
+
+Let&#x27;s pull the front page stories from reddit
+
+require(&#x27;node.io&#x27;).<span class="apidocCodeKeywordSpan">scrape</span>(function() {
+    this.getHtml(&#x27;http://www.reddit.com/&#x27;, function(err, $) {
+        var stories = [];
+        $(&#x27;a.title&#x27;).each(function(title) {
+            stories.push(title.text);
+        });
+        this.emit(stories);
+    });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.start" id="apidoc.element.node.io.start">
+        function <span class="apidocSignatureSpan">node.io.</span>start
+        <span class="apidocSignatureSpan">(job, options, callback, capture_output)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (job, options, callback, capture_output) {
+    if (typeof options === &#x27;function&#x27;) {
+        capture_output = callback;
+        callback = options;
+        options = {};
+    }
+    options = options || {};
+
+    var processor = new Processor(options);
+
+    //Default behaviour is to exit once the job is complete
+    callback = callback || function (err) {
+        if (err) {
+            utils.status.error(err);
+        }
+        process.exit();
+    };
+
+    //Callback for once we&#x27;ve loaded the job
+    var onload = function (job_name, job_obj) {
+
+        //If we&#x27;re capturing output, we need to explicitly override job.output()
+        if (isMaster &#x26;&#x26; capture_output) {
+            var output = [];
+            job_obj.output = function (out) {
+                if (out instanceof Array &#x26;&#x26; job_obj.options.flatten) {
+                    for (var i = 0, l = out.length; i &#x3c; l; i++) {
+                        output.push(out[i]);
+                    }
+                } else {
+                    output.push(out);
+                }
+            };
+            var old_callback = callback;
+            callback = function (err) {
+                old_callback(err, output);
+            };
+        }
+
+        //Are we distributing work?
+        fork = job_obj.options.fork;
+
+        //Initialise the processor
+        processor.init(function () {
+
+            //Start the job
+            if (isMaster) {
+                processor.startJob(job_name, job_obj, callback);
+            }
+
+        });
+    };
+
+    //Load the job
+    processor.loadJob(job, options, function (err, job_name, job_obj) {
+        if (err) {
+            callback(err);
+        } else {
+            onload(job_name, job_obj);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.startSlave" id="apidoc.element.node.io.startSlave">
+        function <span class="apidocSignatureSpan">node.io.</span>startSlave
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startSlave = function (options) {
+    var processor = new Processor(options, true);
+    processor.init(function () {
+        processor.slaveInit();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.web" id="apidoc.element.node.io.web">
+        function <span class="apidocSignatureSpan">node.io.</span>web
+        <span class="apidocSignatureSpan">(args, exit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">web = function (args, exit) {
+
+    exit = exit || function (msg, is_error) {
+        utils.status[is_error ? &#x27;error&#x27; : &#x27;info&#x27;](msg);
+        process.exit(1);
+    };
+
+    var port = 8080, daemonize = false, daemon_arg;
+
+    var module_dir;
+    for (var i = 0, l = require.paths.length; i &#x3c; l; i++) {
+        if (require.paths[i].indexOf(&#x27;.node_modules&#x27;) &#x3e;= 0) {
+            module_dir = require.paths[i];
+            break;
+        }
+    }
+
+    while (args.length) {
+        arg = args.shift();
+        switch (arg) {
+        case &#x27;-p&#x27;:
+        case &#x27;--port&#x27;:
+            port = args.shift();
+            break;
+        case &#x27;-h&#x27;:
+        case &#x27;--help&#x27;:
+            exit(usage);
+            break;
+        case &#x27;-v&#x27;:
+        case &#x27;--version&#x27;:
+            var packagejson = JSON.parse(fs.readFileSync(__dirname + &#x27;/../../../package.json&#x27;, &#x27;utf8&#x27;));
+            exit(&#x27;v&#x27; + packagejson.version);
+            break;
+        case &#x27;-d&#x27;:
+        case &#x27;--daemon&#x27;:
+            if (args.length &#x26;&#x26; args[0][0] !== &#x27;-&#x27;) {
+                daemon_arg = args.shift();
+            }
+            daemonize = true;
+            break;
+        default:
+            module_dir = arg;
+            break;
+        }
+    }
+
+    //Check that module_dir exists and has some jobs in it
+    try {
+        var files = fs.readdirSync(module_dir);
+        if (files.length === 0) throw new Error();
+    } catch (e) {
+        exit(&#x27;No jobs found in &#x27; + module_dir, true);
+    }
+
+    var start_job = function (params, res) {
+        if (typeof params.job === &#x27;undefined&#x27;) {
+            res.writeHead(400);
+            res.end();
+            return;
+        }
+
+        if (params.job.indexOf(&#x27;../&#x27;) &#x3e;= 0) {
+            res.writeHead(403);
+            res.end();
+            return;
+        }
+
+        var methods = {
+            output: function (lines) {
+                lines.forEach(function (line) {
+                    res.write(line + &#x27;&#x3c;br /&#x3e;&#x27;);
+                });
+            }
+        };
+
+        if (params.input &#x26;&#x26; params.input != &#x27;&#x27;) {
+            methods.input = params.input.split(params.sep || &#x27;\r\n&#x27;);
+        }
+
+        var proc_options = {
+            extend: {
+                methods: methods
+            },
+            debug: !!params.debug,
+            silent: !params.debug,
+            global_timeout: params.timeout,
+            args: params.args ? params.args.split(&#x27; &#x27;) : null
+        };
+
+        processor.Processor.prototype.status = function (msg, type) {
+            switch (type) {
+            case &#x27;debug&#x27;:
+                msg = &#x27;&#x3c;font color=&#x22;blue&#x22;&#x3e;DEBUG&#x3c;/font&#x3e;: &#x27; + msg;
+                break;
+
+            case &#x27;error&#x27;:
+            case &#x27;fatal&#x27;:
+                msg = &#x27;&#x3c;font color=&#x22;red&#x22;&#x3e;ERROR&#x3c;/font&#x3e;: &#x27; + msg;
+                break;
+
+            case &#x27;ok&#x27;:
+                msg = &#x27;&#x3c;font color=&#x22;green&#x22;&#x3e;OK&#x3c;/font&#x3e;: &#x27; + msg;
+                break;
+
+            case &#x27;bold&#x27;:
+                msg = &#x27;&#x3c;strong&#x3e;&#x27; + msg + &#x27;&#x3c;/strong&#x3e;&#x27;;
+                break;
+            default:
+                msg = &#x27;&#x3c;font color=&#x22;orange&#x22;&#x3e;INFO&#x3c;/font&#x3e;: &#x27; + msg;
+                break;
+            }
+            res.write(msg + &#x27;&#x3c;br /&#x3e;&#x27;);
+        };
+
+        console.log(&#x27;Running job &#x22;&#x27; + params.job + &#x27;&#x22;&#x27;);
+
+        processor.start(module_dir + &#x27;/&#x27; + params.job, proc_options, function (err) {
+            res.end();
+        });
+    };
+
+    var interface_a = &#x27;&#x27;
+    + &#x27;&#x3c;!DOCTYPE html&#x3e;&#x3c;head&#x3e;&#x3c;title&#x3e;node.io&#x3c;/title&#x3e;&#x3c;/head&#x3e;&#x3c;body&#x3e;&#x27;
+    + &#x27;&#x3c;script type=&#x22;text/javascript&#x22; src=&#x22;http://www.google.com/jsapi&#x22;&#x3e;&#x3c;/script&#x3e;&#x3c;script type=&#x22;text/javascript&#x22;&#x3e;google.load(&#x22;jquery
+&#x22;, &#x22;1.4.4&#x22;);&#x3c;/script&#x3e;&#x3c;style type=&#x22;text/css&#x22;&#x3e;&#x27;
+    + &#x27;.radio, .checkbox{vertical-align:middle;margin:0px;padding:0px;}.radio-item,.checkbox-item{margin-top:5px;float:left;}.radio
+-item label,.checkbox-item label{margin-left:5px;}.radio-item br,.checkbox-item br{clear:left;}&#x27;
+    + &#x27;.submit-button,.submit-reset,.submit-print{margin:0px;overflow:visible;padding:1px 6px;width:auto;}.submit-button::-moz-focus
+-inner,.submit-reset::-moz-focus-inner{bord ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.JobClass" id="apidoc.module.node.io.JobClass">module node.io.JobClass</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobClass.JobClass" id="apidoc.element.node.io.JobClass.JobClass">
+        function <span class="apidocSignatureSpan">node.io.</span>JobClass
+        <span class="apidocSignatureSpan">(options , methods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JobClass = function (options , methods) {
+    //Job.apply(this, [options]);
+    JobClass.__super__.constructor.apply(this, arguments);
+
+    //Handle special input / output cases (see io.js)
+    this.handleSpecialIO();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.JobClass.prototype" id="apidoc.module.node.io.JobClass.prototype">module node.io.JobClass.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobClass.prototype.constructor" id="apidoc.element.node.io.JobClass.prototype.constructor">
+        function <span class="apidocSignatureSpan">node.io.JobClass.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(options , methods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function (options , methods) {
+    //Job.apply(this, [options]);
+    JobClass.__super__.constructor.apply(this, arguments);
+
+    //Handle special input / output cases (see io.js)
+    this.handleSpecialIO();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.JobProto" id="apidoc.module.node.io.JobProto">module node.io.JobProto</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.JobProto" id="apidoc.element.node.io.JobProto.JobProto">
+        function <span class="apidocSignatureSpan">node.io.</span>JobProto
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JobProto = function (options) {
+    this.reset();
+
+    //Set job options
+    this.options = utils.put_default(options, default_options);
+
+    //Bind node-validator
+    var val = new validator.Validator();
+    this.assert = val.check.bind(val);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.JobProto.prototype" id="apidoc.module.node.io.JobProto.prototype">module node.io.JobProto.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.add" id="apidoc.element.node.io.JobProto.prototype.add">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>add
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+exports.Job = new nodeio.Job({}, {
+    input: [&#x27;1&#x27;]
+  , run: function (page) {
+        var self = this;
+        page_numbers_on_page[page].forEach(function (page) {
+            if (!(page in seen_pages)) {
+                self.<span class="apidocCodeKeywordSpan">add</span>(page);
+                seen_pages[page] = true;
+            }
+        });
+        this.emit(&#x27;Loaded page &#x27; + page);
+    }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.addCookie" id="apidoc.element.node.io.JobProto.prototype.addCookie">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>addCookie
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addCookie = function (key, value) {
+    key = encodeURIComponent(key);
+    value = encodeURIComponent(value);
+    if (typeof this.next.cookie !== &#x27;undefined&#x27; &#x26;&#x26; this.next.cookie.length) {
+        this.next.cookie += &#x27;; &#x27; + key + &#x27;=&#x27; + value;
+    } else {
+        this.next.cookie = key + &#x27;=&#x27; + value;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.append" id="apidoc.element.node.io.JobProto.prototype.append">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>append
+        <span class="apidocSignatureSpan">(file, data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">append = function (file, data, callback) {
+    var self = this;
+    if (typeof this.output_streams[file] === &#x27;undefined&#x27;) {
+        var write_mode = {flags: &#x27;a&#x27;, mode: 666, encoding: this.options.encoding};
+        this.output_streams[file] = fs.createWriteStream(file, write_mode);
+        this.output_streams[file].on(&#x27;error&#x27;, self.exit);
+    }
+    this.write.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.bindToDomCollection" id="apidoc.element.node.io.JobProto.prototype.bindToDomCollection">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>bindToDomCollection
+        <span class="apidocSignatureSpan">(collection)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bindToDomCollection = function (collection) {
+    var self = this, last = collection.length - 1, x;
+
+    var traverse = function (attrib, callback, condition) {
+        if (typeof attrib === &#x27;function&#x27;) {
+            callback = attrib;
+            for (x = 0; x &#x3c;= last; x++) {
+                if (!condition()) continue;
+                self.bindToDomElement(collection[x]);
+                if (false === callback(collection[x])) break;
+            }
+        } else {
+            for (x = 0; x &#x3c;= last; x++) {
+                if (!condition()) continue;
+                if (false === callback(collection[x].attribs[attrib])) break;
+            }
+        }
+    };
+
+    collection.each = function (attrib, callback) {
+        traverse(attrib, callback, function() { return true; });
+    };
+
+    //odd() includes the 1st, 3rd, etc..
+    collection.odd = function (attrib, callback) {
+        var i = 0;
+        traverse(attrib, callback, function() { return ++i % 2 === 1; });
+    };
+
+    //even() includes the 2nd, 4th, etc..
+    collection.even = function (attrib, callback) {
+        var i = 0;
+        traverse(attrib, callback, function() { return ++i % 2 === 0; });
+    };
+
+    collection.first = function (callback) {
+        var elem = collection[0];
+        self.bindToDomElement(elem);
+        if (callback) {
+            callback(elem);
+        }
+        return elem;
+    };
+
+    collection.last = function (callback) {
+        var elem = collection[last];
+        self.bindToDomElement(elem);
+        if (callback) {
+            callback(elem);
+        }
+        return elem;
+    };
+
+    collection.filter = function (select) {
+        return self.$(select, collection);
+    };
+
+    //Filter out elements in the collection that do not have a descendant that
+    //matches `select`
+    collection.has = function (select) {
+        var has = [];
+        for (x = 0; x &#x3c;= last; x++) {
+            if (soupselect(collection[x], select).length &#x3e; 0) {
+                has.push(collection[x]);
+            }
+        };
+        self.bindToDomCollection(has);
+        return has;
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.bindToDomElement" id="apidoc.element.node.io.JobProto.prototype.bindToDomElement">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>bindToDomElement
+        <span class="apidocSignatureSpan">(elem)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bindToDomElement = function (elem) {
+    var self = this, hasChildren, x, last;
+
+    if (elem.children &#x26;&#x26; elem.children.length &#x3e; 0) {
+        this.bindToDomCollection(elem.children);
+        last = elem.children.length - 1;
+        hasChildren = true;
+    }
+
+    var rawtext = function () {
+        var text = &#x27;&#x27;;
+        if (hasChildren) {
+            for (x = 0; x &#x3c;= last; x++) {
+                if (elem.children[x].type === &#x27;text&#x27;) {
+                    text += elem.children[x].data;
+                }
+            }
+        }
+        return text;
+    };
+
+    var text = function () {
+        var text = &#x27;&#x27;;
+        if (hasChildren) {
+            for (x = 0; x &#x3c;= last; x++) {
+                if (elem.children[x].type === &#x27;text&#x27;) {
+                    text += elem.children[x].data.trim();
+                } else if (elem.children[x].name === &#x27;br&#x27;) {
+                    text += &#x27;\n&#x27;;
+                }
+            }
+        }
+
+        text = self.filter(text).entityDecode();
+
+        return text;
+    };
+
+    var rawfulltext = function (elem) {
+        var text = &#x27;&#x27;;
+        if (elem.children &#x26;&#x26; elem.children.length &#x3e; 0) {
+            for (var i = 0, l = elem.children.length; i &#x3c; l; i++) {
+                if (elem.children[i].type === &#x27;text&#x27;) {
+                    text += elem.children[i].data;
+                } else if (elem.children[i].type === &#x27;tag&#x27;) {
+                    text += rawfulltext(elem.children[i]);
+                }
+            }
+        }
+        return text;
+    };
+
+    var fulltext = function (elem) {
+        var text = &#x27;&#x27;;
+        if (elem.children &#x26;&#x26; elem.children.length &#x3e; 0) {
+            for (var i = 0, l = elem.children.length; i &#x3c; l; i++) {
+                if (elem.children[i].type === &#x27;text&#x27;) {
+                    text += elem.children[i].data.trim();
+                } else if (elem.children[i].name === &#x27;br&#x27;) {
+                    text += &#x27;\n&#x27;;
+                } else if (elem.children[i].type === &#x27;tag&#x27;) {
+                    text += fulltext(elem.children[i]);
+                }
+            }
+        }
+
+        text = self.filter(text).entityDecode();
+
+        return text;
+    };
+
+    var innerHTML = function (elem) {
+        var text;
+
+        switch (elem.type) {
+        case &#x27;tag&#x27;:
+        case &#x27;script&#x27;:
+        case &#x27;style&#x27;:
+            text = &#x27;&#x3c;&#x27; + elem.raw + &#x27;&#x3e;&#x27;;
+            //Skip if the tag is &#x3c;short /&#x3e;
+            if (elem.raw[elem.raw.length-1] !== &#x27;/&#x27;) {
+                if (elem.children &#x26;&#x26; elem.children.length &#x3e; 0) {
+                    for (var i = 0, l = elem.children.length; i &#x3c; l; i++) {
+                        text += innerHTML(elem.children[i]);
+                    }
+                }
+                text += &#x27;&#x3c;/&#x27; + elem.name + &#x27;&#x3e;&#x27;;
+            }
+            break;
+
+        case &#x27;comment&#x27;:
+            text = &#x27;&#x3c;!--&#x27; + elem.raw + &#x27;--&#x3e;&#x27;;
+            break;
+
+        case &#x27;text&#x27;:
+            text = elem.raw;
+            break;
+
+        default:
+            break;
+        }
+
+        return text;
+    };
+
+    //Define getters
+    elem.__defineGetter__(&#x27;rawtext&#x27;, rawtext);
+    elem.__defineGetter__(&#x27;text&#x27;, text);
+    elem.__defineGetter__(&#x27;striptags&#x27;, function () { return rawfulltext(elem); });
+    elem.__defineGetter__(&#x27;fulltext&#x27;, function () { return fulltext(elem); });
+    elem.__defineGetter__(&#x27;innerHTML&#x27;, function () { return innerHTML(elem); });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.cancel_timeout" id="apidoc.element.node.io.JobProto.prototype.cancel_timeout">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>cancel_timeout
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cancel_timeout = function () {
+    if (this.timeout) {
+        clearTimeout(this.timeout);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.debug" id="apidoc.element.node.io.JobProto.prototype.debug">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>debug
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.doRequest" id="apidoc.element.node.io.JobProto.prototype.doRequest">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>doRequest
+        <span class="apidocSignatureSpan">(method, resource, body, headers, callback, parse)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doRequest = function (method, resource, body, headers, callback, parse) {
+    var self = this, host, port, url, path, rid, secure, h, options, on_complete;
+
+    //Give each a request a unique ID for debugging
+    rid = Math.floor(Math.random() * 100000);
+
+    //`body` and `headers` are optional
+    if (typeof body === &#x27;function&#x27;) {
+        parse = headers;
+        callback = body;
+        headers = default_headers;
+        body = null;
+    } else if (typeof headers === &#x27;function&#x27;) {
+        parse = callback;
+        callback = headers;
+        headers = default_headers;
+    } else {
+        //Add default headers
+        utils.put_default(headers, default_headers);
+    }
+
+    //Proxy the callback to provide auto retry support
+    on_complete = callback;
+    callback = function() {
+        if (self.options.auto_retry) {
+            var err = Array.prototype.slice.call(arguments)[0];
+            try {
+                if (err) {
+                    throw err;
+                }
+                on_complete.apply(self, arguments);
+            } catch (e) {
+                self.retry();
+            }
+        } else {
+            on_complete.apply(self, arguments);
+        }
+    };
+
+    //Add a protocol if there isn&#x27;t one
+    if (!resource.match(/https?:\/\//)) {
+        resource = &#x27;http://&#x27; + resource;
+    }
+
+    //Parse the URL into parts
+    url = urlparse(resource, false),
+
+    //Get the request path
+    path = url.pathname || &#x27;/&#x27;;
+    if (url.search) {
+        path += url.search;
+    }
+
+    //Copy `headers` before modifying it
+    headers = utils.put({}, headers);
+
+    //Set a random user agent if using --spoof
+    if (this.options.spoof) {
+        headers[&#x27;user-agent&#x27;] = user_agents[Math.floor(Math.random() * user_agents.length)];
+    }
+
+    //Add headers from a previous request if this is a nested request
+    if (this.last.headers) {
+        utils.put(headers, this.last.headers);
+    }
+
+    //Add headers added by setHeader, setCookie, etc.
+    utils.put(headers, this.next);
+    this.next = {};
+
+    //Prepare the body to write and get the content length
+    if (body) {
+        if (typeof body === &#x27;object&#x27;) {
+            body = query.stringify(body);
+        }
+        headers[&#x27;Content-Length&#x27;] = Buffer.byteLength(body);
+    }
+
+    method = method.toUpperCase();
+
+    //Debug request headers
+    this.debug(&#x27;\033[7m&#x27;+method+&#x27;\033[0m &#x27;+resource + &#x27; (request &#x27; + rid + &#x27;)&#x27;);
+    this.debug(&#x27;  | &#x27; + method + &#x27; &#x27; + path + &#x27; HTTP/1.1&#x27;);
+    for (h in headers) {
+        this.debug(&#x27;  | &#x27; + h[0].toUpperCase() + h.substr(1) + &#x27;: &#x27; + headers[h]);
+    }
+
+    options = {
+        url: url,
+        method: method,
+        headers: headers,
+        body: body,
+        maxRedirects: this.options.redirects,
+        followRedirect: this.options.redirects &#x3e; 0,
+        followAllRedirects: this.options.redirects &#x3e; 0,
+        encoding: this.options.encoding,
+        jar: false,
+        pool: false
+    }
+
+    //Use a HTTP proxy?
+    if (this.options.proxy) {
+        options.proxy = typeof this.options.proxy === &#x27;function&#x27;
+                      ? this.options.proxy()
+                      : this.options.proxy;
+    }
+
+    //Set a request timeout?
+    if (this.options.timeout) {
+        self.cancel_timeout();
+        options.timeout = this.options.timeout * 1000;
+    }
+
+    request(options, function (err, response, body) {
+        if (self.is_complete) {
+            return;
+        }
+
+        if (err) {
+            self.debug(&#x27;\x1B[31mERR\x1B[0m Request &#x27; + rid + &#x27; failed with (&#x27; + (err.errno || &#x27;?&#x27;) + &#x27;) &#x27; + err + &#x27; (&#x27;+resource+&#x27;)&#x27;);
+            if (/maxRedirects/.test(err.message)) {
+                err = &#x27;redirects&#x27;; //compat
+            }
+            return callback(err);
+        }
+
+        var code = response.statusCode || 200;
+
+        //Debug response headers
+        self.debug(&#x27;\033[7m&#x27;+code+&#x27;\033[0m &#x27;+resource + &#x27; (response &#x27; + rid + &#x27;)&#x27;);
+        for (h in response.headers) {
+            self.debug(&#x27;  | &#x27; + h[0].toUpperCase() + h.substr(1) + &#x27;: &#x27; + response.headers[h]);
+        }
+
+        //Save the response headers for the next request (if to the sam ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.emit" id="apidoc.element.node.io.JobProto.prototype.emit">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>emit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function () {
+    if (this.is_complete) return;
+    this.output.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    require(&#x27;node.io&#x27;).scrape(function() {
+        this.getHtml(&#x27;http://www.reddit.com/&#x27;, function(err, $) {
+            var stories = [];
+            $(&#x27;a.title&#x27;).each(function(title) {
+                stories.push(title.text);
+            });
+            this.<span class="apidocCodeKeywordSpan">emit</span>(stories);
+        });
+    });
+
+If you want to incorporate timeouts, retries, batch-type jobs, etc. head over to [the wiki](https://github.com/chriso/node.io/wiki
+) for documentation.
+
+## Built-in modules
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.encodeBody" id="apidoc.element.node.io.JobProto.prototype.encodeBody">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>encodeBody
+        <span class="apidocSignatureSpan">(body, use_json)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodeBody = function (body, use_json) {
+    if (use_json) {
+        JSON.stringify(body);
+    } else {
+        query.stringify(body);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.exec" id="apidoc.element.node.io.JobProto.prototype.exec">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>exec
+        <span class="apidocSignatureSpan">(cmd, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exec = function (cmd, callback) {
+    this.debug(&#x27;Spawning &#x22;&#x27; + cmd + &#x27;&#x22;&#x27;);
+    var ops = {cwd: process.cwd()};
+    if (this.options.timeout) {
+        ops.timeout = this.options.timeout * 1000;
+    }
+    child.exec(cmd, ops, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.exit" id="apidoc.element.node.io.JobProto.prototype.exit">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>exit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exit = function () {
+    this.is_complete = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+__extends(Digest, nodeio.JobClass);
+function Digest() {
+  Digest.__super__.constructor.apply(this, arguments);
+}
+Digest.prototype.init = function() {
+  if (this.options.args.length === 0 || this.options.args[0] === &#x27;help&#x27;) {
+    this.status(usage);
+    return this.<span class="apidocCodeKeywordSpan">exit</span>();
+  }
+};
+Digest.prototype.run = function(input) {
+  var hash;
+  hash = this.options.args[0];
+  switch (hash) {
+    case &#x27;crc32&#x27;:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.fail_with" id="apidoc.element.node.io.JobProto.prototype.fail_with">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>fail_with
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fail_with = function (err) {
+    var self = this;
+    this.finish(function () {
+        var ret = self.fail(this.assigned_input, err);
+        if (typeof ret !== &#x27;undefined&#x27; &#x26;&#x26; ret !== null) {
+            self.emit(ret);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.filter" id="apidoc.element.node.io.JobProto.prototype.filter">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>filter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.finish" id="apidoc.element.node.io.JobProto.prototype.finish">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>finish
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">finish = function (callback) {
+    if (!this.isComplete) {
+        this.cancel_timeout();
+        this.isComplete = true;
+        if (callback) {
+            callback();
+        };
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.get" id="apidoc.element.node.io.JobProto.prototype.get">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>get
+        <span class="apidocSignatureSpan">(resource, headers, callback, parse)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (resource, headers, callback, parse) {
+    this.doRequest(&#x27;GET&#x27;, resource, null, headers, callback, parse);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    Pagerank.prototype.run = function(input) {
+var ch, url,
+  _this = this;
+url = input;
+if (url.indexOf(&#x27;http://&#x27;) === -1) url = &#x27;http://&#x27; + url;
+ch = &#x27;6&#x27; + GoogleCH(strord(&#x27;info:&#x27; + url));
+return this.<span class="apidocCodeKeywordSpan">get</span>(&#x27;http://toolbarqueries.google.com/tbr?client=navclient-auto&#x26
+;ch=&#x27; + ch + &#x27;&#x26;features=Rank&#x26;q=info:&#x27; + encodeURIComponent(url), function(err, data) {
+  var match;
+  if (err != null) return _this.retry();
+  data = data || &#x27;&#x27;;
+  if (match = data.match(/Rank_1:1:(10|[0-9])/)) {
+    return _this.emit(input + &#x27;,&#x27; + match[1]);
+  } else {
+    return _this.emit(input + &#x27;,&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.getBytesRead" id="apidoc.element.node.io.JobProto.prototype.getBytesRead">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>getBytesRead
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBytesRead = function () {
+    return this.bytes_read;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.getBytesReceived" id="apidoc.element.node.io.JobProto.prototype.getBytesReceived">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>getBytesReceived
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBytesReceived = function () {
+    return this.bytes_received;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.getBytesWritten" id="apidoc.element.node.io.JobProto.prototype.getBytesWritten">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>getBytesWritten
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBytesWritten = function () {
+    return this.bytes_written;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.getHtml" id="apidoc.element.node.io.JobProto.prototype.getHtml">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>getHtml
+        <span class="apidocSignatureSpan">(resource, headers, callback, parse)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getHtml = function (resource, headers, callback, parse) {
+    var self = this;
+
+    if (!this.options.jsdom) {
+        this.prepareHtmlparser();
+    }
+
+    //`headers` is optional
+    if (typeof headers === &#x27;function&#x27;) {
+        callback = headers;
+        headers = default_headers;
+    }
+
+    this.get(resource, headers, function (err, data, headers, response) {
+        if (err) {
+            callback.call(this, err);
+        } else {
+            self.parseHtml(data, callback, response);
+        }
+    }, parse);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Follow [@nodeio](http://twitter.com/nodeio) or visit [http://node.io/](http://node.io/) for updates.
+
+## Scrape example
+
+Let&#x27;s pull the front page stories from reddit
+
+require(&#x27;node.io&#x27;).scrape(function() {
+    this.<span class="apidocCodeKeywordSpan">getHtml</span>(&#x27;http://www.reddit.com/&#x27;, function(err, $) {
+        var stories = [];
+        $(&#x27;a.title&#x27;).each(function(title) {
+            stories.push(title.text);
+        });
+        this.emit(stories);
+    });
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.getLinks" id="apidoc.element.node.io.JobProto.prototype.getLinks">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>getLinks
+        <span class="apidocSignatureSpan">($, selector, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLinks = function ($, selector, options) {
+   if (typeof selector === &#x27;object&#x27; || typeof selector === &#x27;undefined&#x27;) {
+       options = selector || {};
+       selector = &#x27;a&#x27;;
+   }
+   options = utils.put({
+       resolve: true,
+       external: true,
+       static: false,
+       strip_anchor: true,
+       strip_query: false
+   }, options);
+
+   var current_url = this.last.url,
+       current_host = this.last.host.replace(&#x27;www.&#x27;,&#x27;&#x27;),
+       resolve = require(&#x27;url&#x27;).resolve,
+       urlparse = require(&#x27;url&#x27;).parse,
+       urls = [];
+
+   $(selector).each(&#x27;href&#x27;, function (href) {
+       if (!href || href === &#x27;#&#x27; || href.substr(0, 11) === &#x27;javascript:&#x27;) return;
+
+       //Ignore links to static resource if static=false
+       if (!options.static &#x26;&#x26; href.match(/\.(jpg|jpeg|ico|css|gif|png|swf)$/i)) {
+           return;
+       }
+
+       //Strip off the anchor if strip_anchor=true
+       var anchor;
+       if (options.strip_anchor &#x26;&#x26; (anchor = href.indexOf(&#x27;#&#x27;)) !== -1) {
+           href = href.substr(0, anchor);
+       }
+
+       //Resolve relative links if resolve=true
+       if (options.resolve) {
+           href = resolve(current_url, href);
+       }
+
+       //Cleanup common entities
+       href = href.replace(/\s/g,&#x27;%20&#x27;).replace(/&#x26;amp;/g,&#x27;&#x26;&#x27;);
+
+       //Strip off query strings unless strip_query=false. If strip_query is &#x27;smart&#x27; then
+       //let query strings through if they appear to link to separate pages of results
+       var query_str;
+       if (options.strip_query &#x26;&#x26; (query_str = href.indexOf(&#x27;?&#x27;)) != -1) {
+           if (options.strip_query != &#x27;smart&#x27; || (href.indexOf(&#x27;page=&#x27;) === -1
+                   &#x26;&#x26; href.indexOf(&#x27;offset=&#x27;) === -1 &#x26;&#x26; href.indexOf(&#x27;start=&#x27;) === -1)) {
+               href = href.substr(0, query_str);
+           }
+       }
+
+       //Prevent duplicates
+       if (urls.indexOf(href) != -1) {
+           return;
+       }
+
+       //Ignore external resources if external=false
+       if (!options.external) {
+           var host = urlparse(href).host;
+           if (host &#x26;&#x26; current_host != host.replace(&#x27;www.&#x27;,&#x27;&#x27;)) {
+               return;
+           }
+       }
+
+       urls.push(href);
+   });
+   return urls;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.handleInputStream" id="apidoc.element.node.io.JobProto.prototype.handleInputStream">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>handleInputStream
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleInputStream = function (data) {
+    var self = this;
+
+    data = this.input_stream.last_line + data;
+
+    var lines = data.split(&#x27;\n&#x27;), line, line_length;
+
+    for (var i = 0, l = lines.length; i &#x3c; l; i++) {
+        line = lines[i];
+        line_length = line.length;
+        if (line[line_length - 1] === &#x27;\r&#x27;) {
+            line = line.substr(0, line_length - 1);
+        }
+        self.input_stream.lines.push(line);
+    }
+
+    //Last line is incomplete
+    this.input_stream.last_line = this.input_stream.lines.pop();
+
+    if (this.input_stream.lines.length &#x3e; 10000) {
+        this.input_stream.stream.pause();
+        this.input_stream.paused = true;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.handleSpecialIO" id="apidoc.element.node.io.JobProto.prototype.handleSpecialIO">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>handleSpecialIO
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleSpecialIO = function () {
+    var self = this;
+
+    //If output is a string, assume it&#x27;s a file and write to it when ouput is called
+    if (typeof this.output === &#x27;string&#x27;) {
+        this.out_file = this.output;
+
+        this.debug(&#x27;Writing to &#x27; + this.out_file);
+
+        //Write output to the file
+        this.output = function (data) {
+            self.write(this.out_file, data);
+        };
+    }
+
+    //If input is true, return as much input as the processor is asking for (i.e. job will run forever)
+    if (this.input === true) {
+        this.input = function (start, num) {
+            var arr = [];
+            while (num--) {
+                arr.push(null);
+            }
+            return arr;
+        };
+    }
+
+    //If input is false, run the job once
+    if (this.input === false) {
+        this.options.fork = false;
+        this.options.max = 1;
+        this.options.take = 1;
+        var run_once = false;
+        this.input = function (start, num) {
+            if (!run_once) {
+                run_once = true;
+                return [null];
+            } else {
+                return false;
+            }
+        };
+    }
+
+    //If output is false, discard output
+    if (this.output === false) {
+        this.output = function () {};
+    }
+
+    //If input is an array, slice it for input
+    if (this.input instanceof Array) {
+        var arr = this.input;
+        this.input = function (start, num) {
+            return start &#x3e;= arr.length ? false : arr.slice(start, start + num);
+        };
+    }
+
+    //If input is a string, assume it&#x27;s a file or directory
+    if (typeof this.input === &#x27;string&#x27;) {
+
+        var path = this.input, stat = fs.statSync(path);
+
+        this.debug(&#x27;Reading from &#x27; + path);
+
+        if (stat.isFile()) {
+
+            //Read lines from the file
+            this.inputFromFile(path);
+
+        } else if (stat.isDirectory()) {
+
+            //Return all files in the directory
+            this.inputFromDirectory(path);
+
+        } else {
+            this.exit(&#x27;Unknown input: &#x27; + path);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.head" id="apidoc.element.node.io.JobProto.prototype.head">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>head
+        <span class="apidocSignatureSpan">(resource, headers, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">head = function (resource, headers, callback) {
+    this.doRequest(&#x27;HEAD&#x27;, resource, null, headers, callback, null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+StatusCode.prototype.init = function() {
+  if (this.options.args.length &#x26;&#x26; this.options.args[0] === &#x27;help&#x27;) {
+    this.status(usage);
+    return this.exit;
+  }
+};
+StatusCode.prototype.run = function(url) {
+  return this.<span class="apidocCodeKeywordSpan">head</span>(url, __bind(function(err, data, headers, res) {
+    var status;
+    status = res != null ? res.statusCode : &#x27;-1&#x27;;
+    if (err) {
+      if (err.length === 3) {
+        status = err;
+      }
+      if (err === &#x27;redirects&#x27;) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.info" id="apidoc.element.node.io.JobProto.prototype.info">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>info
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.initInputStream" id="apidoc.element.node.io.JobProto.prototype.initInputStream">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>initInputStream
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initInputStream = function (stream) {
+    var self = this;
+
+    //Clear any previous input stream
+    if (this.input_stream &#x26;&#x26; this.input_stream.stream) {
+        this.input_stream.stream.destroy();
+    }
+
+    stream.setEncoding(&#x27;utf8&#x27;);
+
+    this.input_stream = {
+        stream: stream,
+        lines: [],
+        last_line: &#x27;&#x27;,
+        end: false,
+        paused: false
+    };
+
+    this.input_stream.stream.on(&#x27;data&#x27;, function (data) {
+        if (self.input_stream.end) return;
+        self.handleInputStream(data);
+        self.bytes_read += data.length;
+    });
+
+    this.input_stream.stream.on(&#x27;end&#x27;, function () {
+        self.input_stream.end = true;
+        if (self.input_stream.last_line.length) {
+            self.input_stream.lines.push(self.input_stream.last_line);
+            self.input_stream.last_line = &#x27;&#x27;;
+        }
+    });
+
+    this.input_stream.stream.on(&#x27;error&#x27;, this.exit);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.input" id="apidoc.element.node.io.JobProto.prototype.input">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>input
+        <span class="apidocSignatureSpan">(start, num, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">input = function (start, num, callback) {
+    this.debug(&#x27;Reading from STDIN&#x27;);
+    var stream = process.openStdin();
+    this.inputStream(stream);
+    this.input.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.inputFromDirectory" id="apidoc.element.node.io.JobProto.prototype.inputFromDirectory">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>inputFromDirectory
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inputFromDirectory = function (path) {
+    var self = this, files = fs.readdirSync(path);
+
+    this.debug(&#x27;Reading files in &#x27; + path);
+
+    //Trim trailing slash
+    var trim_slash = function (path) {
+        if (path[path.length - 1] === &#x27;/&#x27;) {
+            path = path.substr(0, path.length - 1);
+        }
+        return path;
+    };
+    path = trim_slash(path);
+
+    //Store full paths
+    for (var i = 0, l = files.length; i &#x3c; l; i++) {
+        files[i] = path + &#x27;/&#x27; + files[i];
+    }
+
+    this.input = function (start, num) {
+        if (files.length &#x3e; start) {
+            return files.slice(start, start + num);
+        } else {
+            return false;
+        }
+    };
+
+    //Recurse subdirectories if the `recurse` op is set
+    if (this.options.recurse) {
+
+        var run_method = this.run;
+
+        this.run = function (path) {
+            self = this;
+            fs.stat(path, function (err, stat) {
+
+                if (err) {
+
+                    self.exit(err);
+                }
+
+                if (!stat.isDirectory()) {
+
+                    //If it&#x27;s not a directory, continue as normal
+                    run_method.apply(self, [path]);
+
+                } else {
+
+                    fs.readdir(path, function (err, files) {
+                        if (err) {
+                            self.exit(err);
+                        }
+
+                        var dir_files = [];
+
+                        path = trim_slash(path);
+
+                        for (var i = 0, l = files.length; i &#x3c; l; i++) {
+                            dir_files.push(path + &#x27;/&#x27; + files[i]);
+                        }
+
+                        //Use the addInput() hook rather than files.push(file) so that recursing
+                        //plays nice with multiple processes (i.e. is shared evenly)
+                        self.add(dir_files);
+                        self.skip();
+                    });
+                }
+            });
+        };
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.inputFromFile" id="apidoc.element.node.io.JobProto.prototype.inputFromFile">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>inputFromFile
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inputFromFile = function (path) {
+    this.debug(&#x27;Reading from &#x27; + path);
+    this.in_file = path;
+    var stream = fs.createReadStream(path, {bufferSize: this.options.read_buffer});
+    this.inputStream(stream);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.inputStream" id="apidoc.element.node.io.JobProto.prototype.inputStream">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>inputStream
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inputStream = function (stream) {
+    this.initInputStream(stream);
+    this.input = this.takeInputStreamLines;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.output" id="apidoc.element.node.io.JobProto.prototype.output">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>output
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">output = function (data) {
+    this.debug(&#x27;Writing to STDOUT&#x27;);
+    this.outputStream(process.stdout, &#x27;stdout&#x27;);
+    this.output.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  WordCount.prototype.complete = function() {
+    var count, output, word;
+    output = [];
+    for (word in word_count) {
+      count = word_count[word];
+      output.push(count + &#x27; &#x27; + word);
+    }
+    this.<span class="apidocCodeKeywordSpan">output</span>(output);
+    return true;
+  };
+  return WordCount;
+})();
+UsageDetails = (function() {
+  __extends(UsageDetails, nodeio.JobClass);
+  function UsageDetails() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.outputStream" id="apidoc.element.node.io.JobProto.prototype.outputStream">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>outputStream
+        <span class="apidocSignatureSpan">(stream, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">outputStream = function (stream, name) {
+    name = name || Math.floor(Math.random() * 1000000);
+    this.output_streams[name] = stream;
+    this.output = function (data) {
+        this.write(name, data);
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.parseHtml" id="apidoc.element.node.io.JobProto.prototype.parseHtml">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>parseHtml
+        <span class="apidocSignatureSpan">(data, callback, response)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseHtml = function (data, callback, response) {
+    var self = this, recurse = this.options.recurse;
+    var headers = response &#x26;&#x26; response.headers ? response.headers : {};
+    if (this.options.jsdom) {
+        var features = {
+                FetchExternalResources: this.options.external_resources,
+                ProcessExternalResources: this.options.external_resources,
+                QuerySelector: false
+        };
+        var $, jquery, default_$;
+        try {
+            this.window = require(&#x27;jsdom&#x27;).jsdom(data, null, {features:features, url:response.url}).createWindow();
+            jquery = require(&#x27;jquery&#x27;);
+            default_$ = jquery.create(this.window);
+            $ = function (selector, context) {
+                return context ? jquery.create(context)(selector) : default_$(selector);
+            };
+        } catch (e) {
+            callback.apply(self, [e, $, data, headers, response]);
+            return;
+        }
+        if (recurse === 1 || recurse === true || recurse instanceof Array) {
+            this.recurseUrls($);
+        }
+        callback.apply(self, [null, $, data, headers, response]);
+    } else {
+        var self = this;
+        this.postParse = function (err, dom) {
+            if (err) {
+                callback.call(self, err);
+            } else {
+                $ = function (selector, context, suppressErrors) {
+                    //Allow the user to specify a custom context (thanks to github.com/jimbishopp)
+                    return self.$(selector, context || dom, suppressErrors);
+                };
+                if (recurse === 1 || recurse === true || recurse instanceof Array) {
+                    self.recurseUrls($);
+                }
+                callback.apply(self, [null, $, data, headers, response]);
+            }
+        };
+        //Check if the parser is already initalised
+        if (!this.htmlparser) {
+            this.prepareHtmlparser();
+        }
+        this.htmlparser.parseComplete(data);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.parseValues" id="apidoc.element.node.io.JobProto.prototype.parseValues">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>parseValues
+        <span class="apidocSignatureSpan">(line, delim, quote, quote_escape)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseValues = function (line, delim, quote, quote_escape) {
+    if (typeof delim === &#x27;undefined&#x27; || delim === &#x27;csv&#x27;) {
+        delim = &#x27;,&#x27;;
+    } else if (delim === &#x27;tsv&#x27;) {
+        delim = &#x27;\t&#x27;;
+    }
+    quote = quote || &#x27;&#x22;&#x27;;
+    quote_escape = quote_escape || &#x27;&#x22;&#x27;;
+
+    //Check for cached regex patterns
+    var match, clean, q;
+    if (typeof cache[&#x27;&#x27;+delim+quote+quote_escape] !== &#x27;undefined&#x27;) {
+
+        var patterns = cache[&#x27;&#x27;+delim+quote+quote_escape];
+        match = patterns[0];
+        clean = patterns[1];
+        q = patterns[2];
+
+    } else {
+
+        //Escape special regex chars
+        var d, escape = function (str) {
+            return str.replace(new RegExp(&#x27;[.*+?|()\\[\\]{}]&#x27;, &#x27;g&#x27;), &#x27;\\$&#x26;&#x27;);
+        }
+
+        d = escape(delim);
+        e = escape(quote_escape);
+        q = escape(quote);
+
+        match = new RegExp(
+            &#x27;(&#x27; + d + &#x27;|^)&#x27; +
+            &#x27;(?:&#x27; + q + &#x27;([^&#x27; + q + &#x27;]*(?:&#x27; + e + q + &#x27;[^&#x27; + q + &#x27;]*)*)&#x27; + q + &#x27;|&#x27; +
+            &#x27;([^&#x27; + q + d + &#x27;]*))&#x27;
+        , &#x27;g&#x27;);
+
+        clean = new RegExp(e + q, &#x27;g&#x27;);
+
+        //Cache the patterns for subsequent calls
+        cache[delim+quote+quote_escape] = [match, clean, q];
+    }
+
+    var matches = null, value, csv = [];
+
+    while (matches = match.exec(line)) {
+        if (!matches[1] &#x26;&#x26; csv.length) {
+            break;
+        } else if (matches[2]) {
+            value = matches[2].replace(clean, q);
+        } else {
+            value = matches[3] || &#x27;&#x27;;
+        }
+        csv.push(value);
+    }
+
+    return csv;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.post" id="apidoc.element.node.io.JobProto.prototype.post">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>post
+        <span class="apidocSignatureSpan">(resource, body, headers, callback, parse)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (resource, body, headers, callback, parse) {
+    this.doRequest(&#x27;POST&#x27;, resource, body, headers, callback, parse);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.postHtml" id="apidoc.element.node.io.JobProto.prototype.postHtml">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>postHtml
+        <span class="apidocSignatureSpan">(resource, body, headers, callback, parse)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">postHtml = function (resource, body, headers, callback, parse) {
+    var self = this;
+
+    if (!this.options.jsdom) {
+        this.prepareHtmlparser();
+    }
+
+    //`body` and `headers` are optional
+    if (typeof body === &#x27;function&#x27;) {
+        callback = body;
+        preparse = headers;
+        headers = default_headers;
+    } else if (typeof headers === &#x27;function&#x27;) {
+        parse = callback;
+        callback = headers;
+        headers = default_headers;
+    }
+
+    this.post(resource, body, headers, function (err, data, headers, response) {
+        if (err) {
+            callback.call(this, err);
+        } else {
+            self.parseHtml(data, callback, response);
+        }
+    }, parse);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.prepareHtmlparser" id="apidoc.element.node.io.JobProto.prototype.prepareHtmlparser">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>prepareHtmlparser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareHtmlparser = function () {
+    var self = this, $, htmlparser = require(&#x27;htmlparser&#x27;);
+    this.postParse = this.postParse || function () {};
+    this.htmlparser = new htmlparser.Parser(new htmlparser.DefaultHandler(function () {
+            self.htmlparser = null;
+            self.postParse.apply(this, arguments);
+        }, {verbose: true, ignoreWhitespace: true}
+    ));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.read" id="apidoc.element.node.io.JobProto.prototype.read">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>read
+        <span class="apidocSignatureSpan">(file, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function (file, callback) {
+    if (callback) {
+        fs.readFile(file, this.options.encoding, callback);
+    } else {
+        return fs.readFileSync(file, this.options.encoding);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.recurseUrls" id="apidoc.element.node.io.JobProto.prototype.recurseUrls">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>recurseUrls
+        <span class="apidocSignatureSpan">($)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">recurseUrls = function ($) {
+   var i, l, links = this.getLinks($, {
+       external: false,
+       strip_query: &#x27;smart&#x27;
+   });
+
+   if ((l = links.length) === 0) {
+       return;
+   }
+
+   if (this.options.recurse instanceof Array) {
+       var pattern, n_pattern, p = this.options.recurse.length;
+       if (p &#x3e;= 1) {
+           pattern = this.options.recurse[0];
+       }
+       if (p &#x3e;= 2) {
+           n_pattern = this.options.recurse[1];
+       }
+
+       //Iterate over links on the page and recurse urls based on the patterns
+       for (i = 0; i &#x3c; l; i++) {
+           if ((pattern &#x26;&#x26; !links[i].match(pattern))
+                   || (n_pattern &#x26;&#x26; links[i].match(n_pattern))) {
+               continue;
+           }
+           this.add(links[i]);
+       }
+   } else {
+       //Iterate over links on the page and recurse children of the current url
+       for (i = 0; i &#x3c; l; i++) {
+           if (links[i].indexOf(this.last.url) === -1) {
+               continue;
+           }
+           this.add(links[i]);
+       }
+   }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.reset" id="apidoc.element.node.io.JobProto.prototype.reset">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+    this.input_stream = {};
+    this.output_streams = {};
+
+    this.assigned_input = [];
+    this.timeout = null;
+    this.isComplete = false;
+
+    this.bytes_read = 0;
+    this.bytes_written = 0;
+    this.bytes_received = 0;
+
+    //Store info about the last and next request
+    this.last = {};
+    this.next = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.run" id="apidoc.element.node.io.JobProto.prototype.run">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>run
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function () {
+    this.emit.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.sanitize" id="apidoc.element.node.io.JobProto.prototype.sanitize">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>sanitize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sanitize = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.setCookie" id="apidoc.element.node.io.JobProto.prototype.setCookie">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>setCookie
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setCookie = function (key, value) {
+    if (value) {
+        key = encodeURIComponent(key) + &#x27;=&#x27; + encodeURIComponent(value);
+    }
+    this.setHeader(&#x27;cookie&#x27;, key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.setHeader" id="apidoc.element.node.io.JobProto.prototype.setHeader">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>setHeader
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setHeader = function (key, value) {
+    if (typeof key === &#x27;object&#x27;) {
+        utils.put(this.next, key);
+    } else {
+        this.next[key.toLowerCase()] = value;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.setUserAgent" id="apidoc.element.node.io.JobProto.prototype.setUserAgent">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>setUserAgent
+        <span class="apidocSignatureSpan">(agent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setUserAgent = function (agent) {
+    this.setHeader(&#x27;user-agent&#x27;, agent);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.skip" id="apidoc.element.node.io.JobProto.prototype.skip">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>skip
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">skip = function () {
+    this.is_complete = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    };
+    EvalExp.prototype.run = function(input) {
+      var result;
+      result = eval(this.options.args[0]);
+      if (result != null) {
+        return this.emit(result);
+      } else {
+        return this.<span class="apidocCodeKeywordSpan">skip</span>();
+      }
+    };
+    return EvalExp;
+  })();
+  this[&#x22;class&#x22;] = EvalExp;
+  this.job = new EvalExp();
+}).call(this);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.spawn" id="apidoc.element.node.io.JobProto.prototype.spawn">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>spawn
+        <span class="apidocSignatureSpan">(args, stdin, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spawn = function (args, stdin, callback) {
+    if (typeof stdin === &#x27;function&#x27;) {
+        callback = stdin;
+        stdin = undefined;
+    }
+
+    this.debug(&#x27;Spawning &#x22;&#x27; + args + &#x27;&#x22;&#x27;);
+
+    if (!(args instanceof Array)) {
+        args = args.split(&#x27; &#x27;);
+    }
+
+    var cmd = args.shift(),
+        stdout = &#x27;&#x27;, stderr = &#x27;&#x27;,
+        called = false,
+        proc = child.spawn(cmd, args, {cwd: process.cwd()});
+
+    proc.stdout.on(&#x27;data&#x27;, function (data) {
+        stdout += data;
+    });
+
+    proc.stderr.on(&#x27;data&#x27;, function (data) {
+        if (/^execvp\(\)/.test(data.asciiSlice(0, data.length))) {
+            callback(&#x27;Failed to start child process.&#x27;);
+            called = true;
+        } else {
+            stderr += data;
+        }
+    });
+
+    proc.on(&#x27;exit&#x27;, function () {
+        if (!called) {
+            callback(null, stdout, stderr);
+        }
+    });
+
+    if (stdin) {
+        proc.stdin.write(stdin);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.takeInputStreamLines" id="apidoc.element.node.io.JobProto.prototype.takeInputStreamLines">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>takeInputStreamLines
+        <span class="apidocSignatureSpan">(start, num, callback, read_id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">takeInputStreamLines = function (start, num, callback, read_id) {
+    var self = this;
+
+    if (this.input_stream.paused &#x26;&#x26; this.input_stream.lines.length &#x3c;= 5000) {
+        this.input_stream.paused = false;
+        this.input_stream.stream.resume();
+    }
+
+    read_id = read_id || read_request_id++;
+
+    if (this.input_stream.end || this.input_stream.lines.length &#x3e;= num) {
+
+        var return_lines = function () {
+            if (read_id !== last_read_id &#x26;&#x26; !self.input_stream.end) {
+                //Wait for a previous request to return lines
+                utils.tick(return_lines);
+            } else {
+                last_read_id++;
+                callback(self.input_stream.lines.length ? self.input_stream.lines.splice(0, num) : false);
+            }
+        };
+        return_lines();
+
+    } else {
+        utils.tick(function () {
+            self.takeInputStreamLines(start, num, callback, read_id);
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.waitForOutputStreamDrains" id="apidoc.element.node.io.JobProto.prototype.waitForOutputStreamDrains">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>waitForOutputStreamDrains
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waitForOutputStreamDrains = function (callback) {
+    var self = this;
+    if (this.out_file) {
+        this.status(&#x27;Waiting on output stream(s) to drain..&#x27;);
+    }
+    var wait_for_drain = function () {
+        var keep_waiting = false;
+        for (var i in self.output_streams) {
+            var stream = self.output_streams[i];
+            if (stream._queue) {
+                if (stream._queue.length === 0) {
+                    stream.end();
+                } else {
+                    keep_waiting = true;
+                }
+            } else if (stream._writeQueue) {
+                if (stream._writeQueue.length === 0) {
+                    stream.end();
+                } else {
+                    keep_waiting = true;
+                }
+            } else {
+                continue;
+            }
+        }
+        if (keep_waiting) {
+            setTimeout(wait_for_drain, 100);
+        } else {
+            //Done!
+            callback();
+        }
+    };
+    wait_for_drain();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.write" id="apidoc.element.node.io.JobProto.prototype.write">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>write
+        <span class="apidocSignatureSpan">(file, data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (file, data, callback) {
+    var self = this;
+
+    //Cache FD&#x27;s
+    if (typeof this.output_streams[file] === &#x27;undefined&#x27;) {
+        var write_mode = {flags: &#x27;w&#x27;, mode: 0644, encoding: this.options.encoding};
+        this.output_streams[file] = fs.createWriteStream(file, write_mode);
+        this.output_streams[file].on(&#x27;error&#x27;, self.exit);
+    }
+
+    //Ensure data is written in the same order as write() is called
+    var write_id = write_request_id++;
+
+    var write_lines = function () {
+        if (write_id !== last_write_id) {
+
+            //Wait for a previous requests
+            utils.tick(write_lines);
+
+        } else {
+            last_write_id++;
+
+            var str = utils.dataToString(data, self.options.newline);
+            var written = self.output_streams[file].write(str);
+
+            if (file !== &#x27;stdout&#x27;) {
+                self.bytes_written += str.length;
+            }
+
+            if (callback) {
+                if (written) {
+                    callback();
+                } else {
+                    self.output_streams[file].on(&#x27;drain&#x27;, callback);
+                }
+            }
+        }
+    };
+    write_lines();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.JobProto.prototype.writeValues" id="apidoc.element.node.io.JobProto.prototype.writeValues">
+        function <span class="apidocSignatureSpan">node.io.JobProto.prototype.</span>writeValues
+        <span class="apidocSignatureSpan">(values, delim, quote, quote_escape)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeValues = function (values, delim, quote, quote_escape) {
+    if (typeof delim === &#x27;undefined&#x27; || delim === &#x27;csv&#x27;) {
+        delim = &#x27;,&#x27;;
+    } else if (delim === &#x27;tsv&#x27;) {
+        delim = &#x27;\t&#x27;;
+    }
+    quote = quote || &#x27;&#x22;&#x27;;
+    quote_escape = quote_escape || &#x27;&#x22;&#x27;;
+
+    if (values instanceof Array) {
+        var quoted_values = [], value,
+            quote_reg = new RegExp(&#x27;[&#x27; + quote + &#x27;]&#x27;, &#x27;g&#x27;),
+            requires_quotes = new RegExp(&#x27;[&#x27; + delim + &#x27;\r\n]&#x27;);
+
+        for (var i = 0, l = values.length; i &#x3c; l; i++) {
+            value = values[i] == null ? &#x27;&#x27; : &#x27;&#x27; + values[i];
+            if (value &#x26;&#x26; value.indexOf(quote) &#x3e; -1) {
+                value = quote + value.replace(quote_reg, quote_escape + quote) + quote;
+            } else if (value == &#x27;&#x27; || requires_quotes.test(value)) {
+                value = quote + value + quote;
+            }
+            quoted_values.push(value);
+        }
+        values = quoted_values.join(delim);
+    }
+    return values;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.Processor" id="apidoc.module.node.io.Processor">module node.io.Processor</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.Processor" id="apidoc.element.node.io.Processor.Processor">
+        function <span class="apidocSignatureSpan">node.io.</span>Processor
+        <span class="apidocSignatureSpan">(options, start_as_slave)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Processor = function (options, start_as_slave) {
+    isSlave = start_as_slave &#x26;&#x26; !process.env._CHILD_ID_;
+    isMaster = !start_as_slave &#x26;&#x26; !process.env._CHILD_ID_;
+
+    this.options = options || {};
+    this.jobs = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.Processor.prototype" id="apidoc.module.node.io.Processor.prototype">module node.io.Processor.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.prototype.endJob" id="apidoc.element.node.io.Processor.prototype.endJob">
+        function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>endJob
+        <span class="apidocSignatureSpan">(job)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">endJob = function (job) {
+    if (typeof job === &#x27;object&#x27;) {
+        job = utils.crc32(JSON.stringify(job));
+    }
+    for (var i = 0, l = this.jobs.length; i &#x3c; l; i++) {
+        if (this.jobs[i].job_name == job) {
+            delete this.jobs[i];
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.prototype.handleMasterMessage" id="apidoc.element.node.io.Processor.prototype.handleMasterMessage">
+        function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>handleMasterMessage
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleMasterMessage = function (data) {
+    var job = this.jobs[data[1]], self = this;
+
+    switch (data[0]) {
+    case &#x27;load&#x27;: //[&#x27;load&#x27;, job, options, worker_id]
+        this.id = data[3];
+        this.options = data[2];
+        var load = !isSlave ? this.loadJob : this.slaveLoadJob;
+        load.call(this, data[1], this.options, function (err, job_name, job_obj) {
+            if (err) {
+                self.exit(err);
+            } else {
+                self.startJob.call(self, job_name, job_obj);
+            }
+        });
+        break;
+
+    case &#x27;input&#x27;: //[&#x27;input&#x27;, job, input]
+        if (!job) {
+            //The job might not have compiled yet..
+            setTimeout(function () {
+                self.handleMasterMessage(data);
+            }, 100);
+            return;
+        }
+
+        job.worker.emit(&#x27;input&#x27;, data[2]);
+        break;
+
+    case &#x27;exit&#x27;: //[&#x27;exit&#x27;]
+        process.exit(1);
+        break;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.prototype.handleWorkerMessage" id="apidoc.element.node.io.Processor.prototype.handleWorkerMessage">
+        function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>handleWorkerMessage
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleWorkerMessage = function (data) {
+    var job = this.jobs[data[1]],
+        master = job.master;
+
+    switch (data[0]) {
+    case &#x27;output&#x27;: //[&#x27;output&#x27;, job, worker_id, output]
+        master.emit(&#x27;output&#x27;, data[3]);
+        break;
+
+    case &#x27;pull&#x27;: //[&#x27;pull&#x27;, job, worker_id]
+        job.pull_requests++;
+        if (!job.is_complete) {
+            master.emit(&#x27;pullInput&#x27;, data[2]);
+        }
+        break;
+
+    case &#x27;err&#x27;: //[&#x27;err&#x27;, job, err]
+        job.oncomplete(data[3]);
+        break;
+
+    case &#x27;complete&#x27;: //[&#x27;complete&#x27;, job, worker_id, output]
+        if (data[3]) {
+            master.emit(&#x27;output&#x27;, data[3]);
+        }
+        job.worker_complete[data[2]] = true;
+        break;
+
+    case &#x27;add&#x27;: //[&#x27;add&#x27;, job, worker_id, input, dont_flatten]
+        master.emit(&#x27;addInput&#x27;, data[3], data[4]);
+        break;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.prototype.init" id="apidoc.element.node.io.Processor.prototype.init">
+        function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>init
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (callback) {
+    var self = this;
+
+    if (isMaster) {
+
+        if (fork) {
+
+            //It&#x27;s too hard supporting two stables with different API&#x27;s. It&#x27;s easy
+            //to use the new childprocess.fork once 0.6 is standard.
+            this.status(&#x27;Fork will be unsupported until v0.4 is deprecated&#x27;, &#x27;error&#x27;);
+            fork = false;
+
+        }
+
+        //If we&#x27;re only running in the one process, we&#x27;re ready to start
+        return callback();
+
+    } else {
+
+        //If the number of workers is unspecified, spawn one worker per core
+        if ((isMaster || isSlave) &#x26;&#x26; fork === true) {
+            fork = require(&#x27;os&#x27;).cpus().length;
+        }
+
+        //Use existing workers if already spawned
+        fork -= worker_count;
+        if (fork &#x3c;= 0) {
+            return callback();
+        }
+
+        var nodes = multi.spawnWorkers(fork);
+
+        //The master receives this event when a child is spawned
+        nodes.addListener(&#x27;child&#x27;, function (stream) {
+
+            //Add message handlers
+            stream = multi.frameStream(stream, true);
+            stream.addListener(&#x27;message&#x27;, function (data) {
+                self.handleWorkerMessage(data);
+            });
+
+            workers.push(stream);
+            worker_count++;
+
+            //If we&#x27;ve spawned enough children, continue
+            if (worker_count == fork) {
+                fork = !!fork;
+                callback();
+            }
+        });
+
+        //Each child receives this event after they&#x27;re spawned
+        nodes.addListener(&#x27;master&#x27;, function (stream) {
+
+            //Add message handlers
+            stream = multi.frameStream(stream, true);
+            stream.addListener(&#x27;message&#x27;, function (data) {
+                self.handleMasterMessage(data);
+            });
+
+            //Keep a reference to the master process
+            master = stream;
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.prototype.loadJob" id="apidoc.element.node.io.Processor.prototype.loadJob">
+        function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>loadJob
+        <span class="apidocSignatureSpan">(job, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadJob = function (job, options, callback) {
+    var self = this;
+
+    if (typeof job === &#x27;object&#x27;) {
+
+        //The job is already loaded. Since we don&#x27;t have a unique job
+        //name, give the job a unique ID before starting
+        var job_id = sigmund(job);
+        this.processJob(job_id, job, options, callback);
+
+    } else if (typeof job === &#x27;string&#x27;) {
+
+        //Check if the job is a builtin
+        var builtins = [&#x27;digest&#x27;,&#x27;eval&#x27;,&#x27;pagerank&#x27;,&#x27;query&#x27;,&#x27;resolve&#x27;,&#x27;statuscode&#x27;,&#x27;validate&#x27;,&#x27;word_count&#x27;];
+        if (builtins.indexOf(job) !== -1) {
+            this.processJob(job, require(__dirname + &#x27;/../../builtin/&#x27; + job + &#x27;.js&#x27;), options, callback);
+            return;
+        }
+
+        var ext = path.extname(job), is_coffee = false;
+
+        if (ext) {
+
+            is_coffee = ext === &#x27;.coffee&#x27; ? true : false
+
+        } else {
+
+            //No extension provided. Check to see if it&#x27;s a .coffee file, otherwise let NodeJS determine the ext
+            try {
+                fs.lstatSync(job + &#x27;.coffee&#x27;);
+                job += &#x27;.coffee&#x27;;
+                is_coffee = true;
+            } catch (e) {}
+        }
+
+        if (!is_coffee) {
+
+            //Now that require.paths has gone away we have to jump through hoops.
+
+            var tryPaths = [process.cwd() + &#x27;/&#x27;, &#x27;&#x27;];
+
+            for (var jobPath, i = 0; i &#x3c; tryPaths.length; i++) {
+                jobPath = tryPaths[i] + job;
+                try {
+                    this.status(&#x27;Attempting to load require(\&#x27;&#x27; + jobPath + &#x27;\&#x27;)&#x27;, &#x27;debug&#x27;);
+                    this.processJob(job, require(jobPath), options, callback);
+                    return;
+                } catch (e) {
+                    if (new RegExp(&#x22;Cannot find module &#x27;&#x22;+jobPath+&#x22;&#x27;&#x22;).test(e.message)) {
+                        this.status(&#x27;Failed to load require(\&#x27;&#x27; + jobPath + &#x27;\&#x27;) - not found&#x27;, &#x27;debug&#x27;);
+                    } else {
+                        this.status(&#x27;Error: Failed to load job &#x22;&#x27; + job + &#x27;&#x22;. Please check that the job exists and compiles correctly
+.&#x27;, &#x27;error&#x27;);
+                        throw e;
+                        return callback(&#x27;load error&#x27;);
+                    }
+                }
+            }
+
+            callback(&#x27;The job could not be found.&#x27;);
+
+        } else {
+
+            //Make it a full path
+            if (job.indexOf(&#x27;/&#x27;) === -1) {
+                job = process.cwd() + &#x27;/&#x27; + job;
+            }
+
+            //Compile the job if it&#x27;s CoffeeScript
+            var basename = path.basename(job, &#x27;.coffee&#x27;);
+            var compiled_js = process.cwd() + &#x27;/&#x27; + basename + &#x27;_compiled.js&#x27;;
+
+            if (isMaster) {
+
+                //If we&#x27;re the master, compile and load the .coffee file
+                this.status(&#x27;Compiling &#x27; + job + &#x27; =&#x3e; &#x27; + compiled_js, &#x27;debug&#x27;);
+
+                utils.compile(options.compiler || &#x27;coffee&#x27;, job, compiled_js, function(err) {
+                    if (err) {
+                        callback(err);
+                    } else {
+                        //Load the compiled JS file
+                        self.processJob(compiled_js, require(compiled_js), options, callback);
+                    }
+                });
+
+            } else {
+
+                //If we&#x27;re a child, the file has already been compiled by the master
+                this.processJob(compiled_js, require(compiled_js), options, callback);
+            }
+        }
+
+    } else if (typeof job === &#x27;undefined&#x27;) {
+        callback(&#x27;No job specified! See `node.io --help` for more information.&#x27;);
+    } else {
+        callback(&#x27;Unknown job type: &#x27; + typeof job);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.prototype.processJob" id="apidoc.element.node.io.Processor.prototype.processJob">
+        function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>processJob
+        <span class="apidocSignatureSpan">(job_name, job_obj, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">processJob = function (job_name, job_obj, options, callback) {
+    //Unpack the job if a password was specified with the -u switch
+    if (options.unpack &#x26;&#x26; typeof job_obj.unpack === &#x27;function&#x27;) {
+        this.status(&#x27;Unpacking the job&#x27;, &#x27;debug&#x27;);
+        try {
+            job_obj = job_obj.unpack(options.unpack);
+        } catch (e) {
+            callback(&#x27;Failed to unpack job&#x27;);
+            return;
+        }
+    }
+
+    if (typeof job_obj.job === &#x27;object&#x27;) {
+        job_obj = job_obj.job;
+    }
+
+    //Check if the file contains multiple jobs, e.g. exports.job = {job1:nodeio.Job, job2:nodeio.Job2}
+    if (typeof job_obj === &#x27;object&#x27; &#x26;&#x26; typeof job_obj.run !== &#x27;function&#x27;) {
+        var which_job;
+        if (options.args &#x26;&#x26; options.args.length &#x3e; 0) {
+            which_job = options.args.shift();
+            if (typeof job_obj[which_job] === &#x27;undefined&#x27;) {
+                callback(&#x27;Module does not contain job &#x22;&#x27; + which_job + &#x27;&#x22;&#x27;);
+                return;
+            }
+        } else {
+            //If no argument was specified, use the first job defined in the file
+            for (var i in job_obj) {
+                which_job = i;
+                break;
+            }
+        }
+        job_obj = job_obj[which_job];
+    }
+
+    //this.status(&#x27;Running job &#x22;&#x27; + (which_job || job_name) + &#x27;&#x22;&#x27;, &#x27;debug&#x27;);
+
+    //Some options/switches require the job to be extended (e.g. custom input)
+    if (options.extend &#x26;&#x26; (options.extend.options || options.extend.methods)) {
+        job_obj = job_obj.extend(options.extend.options || {}, options.extend.methods || {});
+    }
+
+    //Allow processor options to override ops defined in the job
+    utils.put(job_obj.options, options);
+
+    return callback(null, job_name, job_obj);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.prototype.setupMasterEvents" id="apidoc.element.node.io.Processor.prototype.setupMasterEvents">
+        function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>setupMasterEvents
+        <span class="apidocSignatureSpan">(job, workers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setupMasterEvents = function (job, workers) {
+    var self = this,
+        master = job.master,
+        worker_count = workers.length,
+        completeCheckInterval;
+
+    //Provide a method to check if workers are complete
+    var areWorkersComplete = function () {
+        if (job.pull_requests &#x3c; worker_count) {
+            return false;
+        }
+        for (var i = 0; i &#x3c; worker_count; i++) {
+            if (!job.worker_complete[i]) {
+                return false;
+            }
+        }
+        return true;
+    };
+
+    master.on(&#x27;start&#x27;, function () {
+        if (worker_count &#x3e; 0) {
+
+            self.status(&#x27;Running &#x27; + worker_count + &#x27; workers..&#x27;, &#x27;debug&#x27;);
+
+            //Each worker is initially idle (complete) and requesting input
+            job.pull_requests = worker_count;
+
+            //Tell each worker to load the job - send `i` so that the worker
+            //can identify itself later
+            for (var i = 0; i &#x3c; worker_count; i++) {
+                workers[i].send([&#x27;load&#x27;, job.job_name, self.options, i]);
+            }
+
+        } else {
+            self.status(&#x27;Running 1 worker..&#x27;, &#x27;debug&#x27;);
+        }
+
+        //Pull the initial input
+        master.emit(&#x27;pullInput&#x27;);
+    });
+
+    master.on(&#x27;pullInput&#x27;, function (for_worker) {
+
+        //Determine how much input we need to pull
+        var pull = job.options.max * job.options.take;
+        if (worker_count &#x3e; 0) {
+            //Pull more if we need have workers
+            pull = pull * job.options.worker_input_mult;
+            if (typeof for_worker === &#x27;undefined&#x27;) {
+                pull = pull * worker_count;
+            }
+        }
+
+        //Handle input limits when the `input` op is set
+        if (job.options.input &#x26;&#x26; (job.input_offset + pull) &#x3e; job.options.input) {
+            pull = Math.max(job.options.input - job.input_offset, 0);
+        }
+
+        //Callback for when input is received from job.input()
+        var handle_input = function (input) {
+            if (typeof input !== &#x27;undefined&#x27; &#x26;&#x26; input !== null &#x26;&#x26; input !== false) {
+                master.emit(&#x27;input&#x27;, input, for_worker);
+            } else {
+
+                //No input? We might be done..
+
+                var isComplete = function () {
+                    //Check if any input was added dynamically
+                    if (job.input.length &#x3e; 0) {
+                        job.is_complete = false;
+                        return false;
+                    }
+
+                    //Wait for workers or instances that are still working
+                    return worker_count &#x3e; 0 ? areWorkersComplete() : job.instances &#x3c;= 0;
+                };
+
+                //If we&#x27;re not complete, check periodically
+                if (isComplete()) {
+                    master.emit(&#x27;complete&#x27;);
+                } else {
+                    completeCheckInterval = setInterval(function () {
+                        if (isComplete()) {
+                            clearInterval(completeCheckInterval);
+                            master.emit(&#x27;complete&#x27;);
+                        }
+                    }, 300);
+                }
+            }
+        };
+
+        if (pull &#x3e; 0) {
+
+            //Incr the input offset
+            var offset = job.input_offset;
+            job.input_offset += pull;
+
+            //Allow job.input() to be sync and async
+            var input = job.obj.input(offset, pull, handle_input);
+            if (typeof input !== &#x27;undefined&#x27;) {
+                handle_input(input);
+            }
+
+        } else {
+            handle_input();
+        }
+    });
+
+    //Called when the master receives input from job.input();
+    master.on(&#x27;input&#x27;, function (input, for_worker) {
+        job.ready_to_request_input = true;
+        job.is_complete = false;
+
+        if (worker_count &#x3e; 0) {
+
+            if (typeof for_worker !== &#x27;undefined&#x27;) {
+
+                //Send input to the worker that issued a pull request
+                workers[for_worker].send([&#x27;input&#x27;, job.id, input]);
+                job.worker_complete[for_worker] = false;
+                job.pull_requests--;
+
+            } else {
+
+                //All workers ne ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.prototype.setupWorkerEvents" id="apidoc.element.node.io.Processor.prototype.setupWorkerEvents">
+        function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>setupWorkerEvents
+        <span class="apidocSignatureSpan">(job, master)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setupWorkerEvents = function (job, master) {
+    var self = this,
+        worker = job.worker,
+        isMaster = typeof master === &#x27;undefined&#x27;;
+
+    worker.on(&#x27;input&#x27;, function (input) {
+        job.ready_to_request_input = true;
+        job.is_complete = false;
+
+        //Add the input that was received
+        for (var i = 0, l = input.length; i &#x3c; l; i++) {
+            job.input.push(input[i]);
+        }
+
+        //Spawn instances to handle the input
+        if (job.input.length &#x3e; 0) {
+            worker.emit(&#x27;process&#x27;);
+        }
+    });
+
+    worker.on(&#x27;pullInput&#x27;, function () {
+        master.send([&#x27;pull&#x27;, job.id, self.id]);
+    });
+
+    worker.on(&#x27;process&#x27;, function () {
+        utils.tick(function () {
+            if (job.is_complete) return;
+
+            if (job.ready_to_request_input &#x26;&#x26; job.input.length &#x3c; (job.options.max * job.options.take * job.options.worker_input_mult
+)) {
+
+                //We already have input, but pull some more for continuity
+                job.ready_to_request_input = false;
+                if (isMaster) {
+                    job.master.emit(&#x27;pullInput&#x27;);
+                } else {
+                    worker.emit(&#x27;pullInput&#x27;);
+                }
+
+            } else if (!isMaster &#x26;&#x26; job.input.length === 0) {
+
+                //We might be done, although hanging instances might add some more input
+                //using add(), so add another check on the next tick
+                utils.tick(function () {
+                    if (job.input.length === 0 &#x26;&#x26; !job.is_complete) {
+                        worker.emit(&#x27;complete&#x27;);
+                    }
+                });
+            }
+
+            //Make sure we don&#x27;t spawn more instances than specified in the `max` op
+            var num = job.options.max - job.instances;
+            while (job.input.length &#x26;&#x26; num--) {
+                worker.emit(&#x27;spawn&#x27;);
+            }
+        });
+    });
+
+    //Create a new job instance
+    var createInstance = function () {
+
+        var instance = new JobClass(job.options, {});
+
+        //We only need a subset of the methods
+        instance.run = job.obj.run;
+        instance.fail = job.obj.fail;
+        instance.debug = job.obj.debug;
+        instance.status = job.obj.status;
+        instance.exit = job.obj.exit;
+        instance.add = job.obj.add;
+
+        //Called when a job wants to dynamically add input outside of job.input() using job.add()
+        instance.add = function (input, dont_flatten) {
+            if (!isMaster) {
+                //Send the added input back to the master so that it is evenly distributed among workers
+                master.send([&#x27;add&#x27;, job.id, input, dont_flatten]);
+            } else {
+                job.master.emit(&#x27;addInput&#x27;, input, dont_flatten);
+            }
+        }
+
+        //Handle job output and continue processing
+        instance.emit = function (result) {
+            worker.emit(&#x27;output&#x27;, result);
+            instance.cancel_timeout();
+            instance.isComplete = true;
+
+            var emit = function () {
+                job.instances--;
+
+                //Reuse the instance later on
+                job.instance_pool.push(instance);
+
+                worker.emit(&#x27;process&#x27;);
+            };
+
+            if (job.options.wait) {
+                setTimeout(emit, job.options.wait * 1000);
+            } else {
+                emit();
+            }
+        };
+
+        //exit() is handled by the master
+        if (!isMaster) {
+            instance.exit = function (err) {
+                master.send([&#x27;err&#x27;, job.id, err]);
+            };
+        }
+
+        //skip() is an alias for emitting an undefined result
+        instance.skip = instance.emit;
+
+        //If no custom fail() method is provided, fail() === skip()
+        if (typeof instance.fail !== &#x27;function&#x27;) {
+            instance.fail = instance.emit;
+        }
+
+        //Handle retries
+        instance.retry = function () {
+            instance.finish(function () {
+
+                //Handle the case where only a certain amount of retries is permitted
+                if (job.options.retries !== false) {
+                    var inp ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.prototype.slaveInit" id="apidoc.element.node.io.Processor.prototype.slaveInit">
+        function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>slaveInit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">slaveInit = function () {
+    //TODO
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.prototype.slaveLoadJob" id="apidoc.element.node.io.Processor.prototype.slaveLoadJob">
+        function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>slaveLoadJob
+        <span class="apidocSignatureSpan">(job, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">slaveLoadJob = function (job, callback) {
+    //TODO
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.prototype.startJob" id="apidoc.element.node.io.Processor.prototype.startJob">
+        function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>startJob
+        <span class="apidocSignatureSpan">(job_name, job_obj, oncomplete)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startJob = function (job_name, job_obj, oncomplete) {
+    var self = this, oncomplete = oncomplete || function () {};
+
+    //Give each job a unique ID - the process may be running more than one
+    //job at the same time
+    var id = utils.crc32(job_name);
+
+    //Init job state
+    var job = this.jobs[id] = {
+        id: id,
+        job_name: job_name,
+        obj: job_obj,
+        oncomplete: oncomplete,
+        options: job_obj.options,
+        instances: 0,
+        instance_pool: [],
+        retry_hashes: {},
+        input: [],
+        output: [],
+        input_offset: 0,
+        output_count: 0,
+        worker_complete: [],
+        ready_to_request_input: true,
+        is_complete: false,
+        start_time: new Date()
+    };
+
+    //Setup job events
+    if (isMaster) {
+        job.master = new events.EventEmitter();
+        this.setupMasterEvents(job, workers);
+    }
+    if (!isMaster || !fork) {
+        //The master process is also a worker process when !fork
+        job.worker = new events.EventEmitter();
+        this.setupWorkerEvents(job, master);
+    }
+
+    //Bind the oncomplete function to job.exit()
+    job.obj.exit = oncomplete;
+
+    //Provide a way for the job to use utils.status() wihle abiding by the -s switch
+    job.obj.status = function (msg, type) {
+        self.status(msg, type);
+    };
+    job.obj.debug = function (msg) {
+        if (self.options.debug) {
+            self.status(msg, &#x27;debug&#x27;);
+        }
+    };
+
+    //Set a timeout for the whole operation if the `global_timeout` op is set
+    if (job.options.global_timeout) {
+        job.global_timeout = setTimeout(function () {
+            oncomplete(&#x27;Operation timed out (&#x3e; &#x27; + job.options.global_timeout + &#x27;s)&#x27;);
+        }, job.options.global_timeout * 1000);
+    }
+
+    //Run job.init() if it&#x27;s defined
+    if (typeof job.obj.init === &#x27;function&#x27;) {
+        job.obj.init.call(job.obj);
+        job.obj.handleSpecialIO.call(job.obj);
+    }
+
+    //Start the job
+    if (isMaster) {
+        job.master.emit(&#x27;start&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.Processor.prototype.status" id="apidoc.element.node.io.Processor.prototype.status">
+        function <span class="apidocSignatureSpan">node.io.Processor.prototype.</span>status
+        <span class="apidocSignatureSpan">(msg, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">status = function (msg, type) {
+    if (type === &#x27;debug&#x27; &#x26;&#x26; !this.options.debug) {
+        return;
+    } else if (!this.options.silent) {
+        utils.status[type || &#x27;info&#x27;](msg);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  Digest = (function() {
+__extends(Digest, nodeio.JobClass);
+function Digest() {
+  Digest.__super__.constructor.apply(this, arguments);
+}
+Digest.prototype.init = function() {
+  if (this.options.args.length === 0 || this.options.args[0] === &#x27;help&#x27;) {
+    this.<span class="apidocCodeKeywordSpan">status</span>(usage);
+    return this.exit();
+  }
+};
+Digest.prototype.run = function(input) {
+  var hash;
+  hash = this.options.args[0];
+  switch (hash) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.digest" id="apidoc.module.node.io.digest">module node.io.digest</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.digest.class" id="apidoc.element.node.io.digest.class">
+        function <span class="apidocSignatureSpan">node.io.digest.</span>class
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Digest() {
+  Digest.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.eval" id="apidoc.module.node.io.eval">module node.io.eval</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.eval.class" id="apidoc.element.node.io.eval.class">
+        function <span class="apidocSignatureSpan">node.io.eval.</span>class
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EvalExp() {
+  EvalExp.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.pagerank" id="apidoc.module.node.io.pagerank">module node.io.pagerank</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.pagerank.class" id="apidoc.element.node.io.pagerank.class">
+        function <span class="apidocSignatureSpan">node.io.pagerank.</span>class
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Pagerank() {
+  Pagerank.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.query" id="apidoc.module.node.io.query">module node.io.query</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.query.class" id="apidoc.element.node.io.query.class">
+        function <span class="apidocSignatureSpan">node.io.query.</span>class
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Query() {
+  Query.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.resolve" id="apidoc.module.node.io.resolve">module node.io.resolve</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.resolve.class" id="apidoc.element.node.io.resolve.class">
+        function <span class="apidocSignatureSpan">node.io.resolve.</span>class
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ResolveAll() {
+  ResolveAll.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.statuscode" id="apidoc.module.node.io.statuscode">module node.io.statuscode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.statuscode.class" id="apidoc.element.node.io.statuscode.class">
+        function <span class="apidocSignatureSpan">node.io.statuscode.</span>class
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StatusCode() {
+  StatusCode.__super__.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.utils" id="apidoc.module.node.io.utils">module node.io.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.compile" id="apidoc.element.node.io.utils.compile">
+        function <span class="apidocSignatureSpan">node.io.utils.</span>compile
+        <span class="apidocSignatureSpan">(compiler, coffee_file, compiled_file, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (compiler, coffee_file, compiled_file, callback) {
+    exec(compiler + &#x27; -p -c &#x22;&#x27; + coffee_file + &#x27;&#x22;&#x27;, {cwd: cwd}, function (err, stdout, stderr) {
+        if (err || stderr) {
+            callback(err || stderr);
+        } else {
+            exports.removeOnExit(compiled_file);
+            fs.writeFile(compiled_file, stdout, callback);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.crc32" id="apidoc.element.node.io.utils.crc32">
+        function <span class="apidocSignatureSpan">node.io.utils.</span>crc32
+        <span class="apidocSignatureSpan">(str, hex)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">crc32 = function (str, hex) {
+    var crc = ~0, i;
+    for (i = 0; i &#x3c; str.length; i++) {
+        crc = (crc &#x3e;&#x3e;&#x3e; 8) ^ crc32tab[(crc ^ str.charCodeAt(i)) &#x26; 0xff];
+    }
+    crc = crc ^ (-1);
+    return hex ? crc.toString(16) : crc;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.daemonize" id="apidoc.element.node.io.utils.daemonize">
+        function <span class="apidocSignatureSpan">node.io.utils.</span>daemonize
+        <span class="apidocSignatureSpan">(arg, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">daemonize = function (arg, callback) {
+    var lock_file = &#x27;/tmp/nodeio.pid&#x27;,
+        log_file = &#x27;/tmp/nodeio.log&#x27;;
+
+    try {
+        var daemon = require(&#x27;daemon&#x27;);
+    } catch(e) {
+        exports.status.fatal(&#x27;Please run `npm install daemon`&#x27;);
+    }
+
+    var start = function () {
+        daemon.daemonize(log_file, lock_file, function (err) {
+            if (err) return status(&#x27;Error starting daemon: &#x27; + err, &#x27;error&#x27;);
+            callback();
+        });
+    };
+
+    var stop = function () {
+        try {
+            fs.readFileSync(lock_file);
+        } catch (e) {
+            return status(&#x27;Daemon is not running&#x27;, &#x27;error&#x27;);
+        };
+        daemon.kill(lock_file, function (err, pid) {
+            if (err &#x26;&#x26; err.errno === 3) {
+                return status(&#x27;Daemon is not running&#x27;, &#x27;error&#x27;);
+            } else if (err) {
+                return status(&#x27;Error stopping daemon: &#x27; + err.errno, &#x27;error&#x27;);
+            }
+            status(&#x27;Successfully stopped daemon with pid: &#x27; + pid, &#x27;ok&#x27;);
+        });
+    };
+
+    switch(arg) {
+    case &#x27;stop&#x27;:
+        stop();
+        break;
+    case &#x27;restart&#x27;:
+        daemon.kill(lock_file, function () {
+            start();
+        });
+        break;
+    case &#x27;log&#x27;:
+        try {
+            console.log(fs.readFileSync(log_file, &#x27;utf8&#x27;));
+        } catch (e) {
+            return status(&#x27;No daemon log file&#x27;, &#x27;error&#x27;);
+        };
+        break;
+    case &#x27;pid&#x27;:
+        try {
+            var pid = fs.readFileSync(lock_file, &#x27;utf8&#x27;);
+            fs.statSync(&#x27;/proc/&#x27; + pid);
+            status(pid, &#x27;info&#x27;);
+        } catch (e) {
+            return status(&#x27;Daemon is not running&#x27;, &#x27;error&#x27;);
+        };
+        break;
+    default:
+        start();
+        break;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.dataToString" id="apidoc.element.node.io.utils.dataToString">
+        function <span class="apidocSignatureSpan">node.io.utils.</span>dataToString
+        <span class="apidocSignatureSpan">(data, newline, stringify_array)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dataToString = function (data, newline, stringify_array) {
+    var str = &#x27;&#x27;;
+    newline = newline || &#x27;\n&#x27;;
+    if (!stringify_array &#x26;&#x26; data instanceof Array) {
+        for (var i = 0, l = data.length; i &#x3c; l; i++) {
+            str += exports.dataToString(data[i], newline, true);
+        }
+    } else if (typeof data === &#x27;object&#x27;) {
+        str = JSON.stringify(data) + newline;
+    } else {
+        str = data + newline;
+    }
+    return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.getFiles" id="apidoc.element.node.io.utils.getFiles">
+        function <span class="apidocSignatureSpan">node.io.utils.</span>getFiles
+        <span class="apidocSignatureSpan">(root_path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFiles = function (root_path, callback) {
+    var files = [];
+    fs.readdir(root_path, function(err, dir_files) {
+        if (err) throw err;
+        var i = dir_files.length;
+        var check_complete = function () {
+            if (i === 0) {
+                callback(files);
+            }
+        };
+        check_complete();
+        dir_files.forEach(function (path) {
+            fs.stat(root_path + &#x27;/&#x27; + path, function (err, stat) {
+                if (err) throw err;
+                if (stat.isDirectory()) {
+                    exports.getFiles(root_path + &#x27;/&#x27; + path, function (subdir_files) {
+                        subdir_files.forEach(function (file) {
+                            files.push(path + &#x27;/&#x27; + file);
+                        });
+                        i--;
+                        check_complete();
+                    });
+                } else {
+                    files.push(path);
+                    i--;
+                    check_complete();
+                }
+            });
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.put" id="apidoc.element.node.io.utils.put">
+        function <span class="apidocSignatureSpan">node.io.utils.</span>put
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (o) {
+    //Create o={} if not an object
+    if (typeof o !== &#x27;object&#x27;) o = {};
+
+    var obj = Array.prototype.slice.call(arguments,1),
+        i = 0, l = obj.length;
+
+    //Iterate over each subsequent object and copy properties into o
+    for (; i &#x3c; l; i++) {
+        for (var j in obj[i]) {
+            if (obj[i].hasOwnProperty(j)) {
+                o[j] = obj[i][j];
+            }
+        }
+    }
+
+    return o;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.put_default" id="apidoc.element.node.io.utils.put_default">
+        function <span class="apidocSignatureSpan">node.io.utils.</span>put_default
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put_default = function (o) {
+    //Create o={} if not an object
+    if (typeof o !== &#x27;object&#x27;) o = {};
+
+    var obj = Array.prototype.slice.call(arguments,1),
+        i = 0, l = obj.length;
+
+    //Iterate over each subsequent object and copy properties into o
+    //if they don&#x27;t already exist
+    for (; i &#x3c; l; i++) {
+        for (var j in obj[i]) {
+            if (typeof o[j] === &#x27;undefined&#x27; &#x26;&#x26; obj[i].hasOwnProperty(j)) {
+                o[j] = obj[i][j];
+            }
+        }
+    }
+
+    return o;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.removeOnExit" id="apidoc.element.node.io.utils.removeOnExit">
+        function <span class="apidocSignatureSpan">node.io.utils.</span>removeOnExit
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeOnExit = function (file) {
+    var removeFile = function () {
+        try {
+            fs.unlinkSync(file);
+        } catch (e) {}
+        try {
+            process.exit();
+        } catch (e) {}
+    };
+    [&#x27;SIGINT&#x27;, &#x27;SIGTERM&#x27;, &#x27;SIGQUIT&#x27;, &#x27;SIGHUP&#x27;, &#x27;exit&#x27;].forEach(function (signal) {
+        process.on(signal, removeFile);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.tick" id="apidoc.element.node.io.utils.tick">
+        function <span class="apidocSignatureSpan">node.io.utils.</span>tick
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tick = function () {
+<span class="apidocCodeCommentSpan">/*
+ * this function will do nothing
+ */
+</span>    return;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node.io.utils.status" id="apidoc.module.node.io.utils.status">module node.io.utils.status</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.status.bold" id="apidoc.element.node.io.utils.status.bold">
+        function <span class="apidocSignatureSpan">node.io.utils.status.</span>bold
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bold = function (msg) {
+    status(msg, type);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.status.debug" id="apidoc.element.node.io.utils.status.debug">
+        function <span class="apidocSignatureSpan">node.io.utils.status.</span>debug
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function (msg) {
+    status(msg, type);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.status.error" id="apidoc.element.node.io.utils.status.error">
+        function <span class="apidocSignatureSpan">node.io.utils.status.</span>error
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (msg) {
+    status(msg, type);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.status.fatal" id="apidoc.element.node.io.utils.status.fatal">
+        function <span class="apidocSignatureSpan">node.io.utils.status.</span>fatal
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fatal = function (msg) {
+    status(msg, type);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.status.info" id="apidoc.element.node.io.utils.status.info">
+        function <span class="apidocSignatureSpan">node.io.utils.status.</span>info
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function (msg) {
+    status(msg, type);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node.io.utils.status.ok" id="apidoc.element.node.io.utils.status.ok">
+        function <span class="apidocSignatureSpan">node.io.utils.status.</span>ok
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ok = function (msg) {
+    status(msg, type);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
